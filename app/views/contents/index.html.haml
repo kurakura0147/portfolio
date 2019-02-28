@@ -6,12 +6,18 @@
       .i.fab.fa-twitter
       .i.fab.fa-facebook
     .header__right--menu
-      .i.fas.fa-bars
+      = link_to user_session_path do
+        .i.fas.fa-bars
     .header__right--account
-      =link_to new_user_registration_path do
-        .i.fas.fa-user
+      - if user_signed_in?
+        =link_to new_user_registration_path do
+          .i.fas.fa-user
+      - else
+        =link_to destroy_user_session_path do
+          .i.fas.fa-user
     .header__right--search
-      .i.fas.fa-search
+      =link_to destroy_user_session_path, method: "delete" do
+        .i.fas.fa-search
 
 .main-content
   .main-content__left
