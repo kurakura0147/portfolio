@@ -1,61 +1,25 @@
-.header
-  .header__logo
-    Portfolio
-  .header__right
-    .header__right--sns
-      .i.fab.fa-twitter
-      .i.fab.fa-facebook
-    .header__right--menu
-      = link_to user_session_path do
-        .i.fas.fa-bars
-    .header__right--account
-      - if user_signed_in?
-        =link_to new_user_registration_path do
-          .i.fas.fa-user
-      - else
-        =link_to destroy_user_session_path do
-          .i.fas.fa-user
-    .header__right--search
-      =link_to destroy_user_session_path, method: "delete" do
-        .i.fas.fa-search
+= render 'shared/header'
 
 .main-content
   .main-content__left
-    .main-content__left--article
-      .article__image
-        content.image
-      .article__list
-        .article__list--text
-          content.text
-        .article__list--time
-          content.time
-    .main-content__left--article
-      .article__image
-        content.image
-      .article__list
-        .article__list--text
-          content.text
-        .article__list--time
-          content.time
-    .main-content__left--article
-      .article__image
-        content.image
-      .article__list
-        .article__list--text
-          content.text
-        .article__list--time
-          content.time
-
-
+    - @contents.each do |content|
+      .main-content__left--article
+        = image_tag content.image , class: "article__image"
+        .article__list
+          .article__title
+            = "タイトル :#{content.name}"
+          .article__text
+            = content.text
+          .article__time
+            .i.far.fa-clock
+            = content.created_at.strftime("%Y/%m/%d %H:%M")
 
   .main-content__right
-
-
-.footer
-  .footer__left
-    .footer__left--text
-      CHECK ME
-    .footer__left--sns
-      .i.fab.fa-twitter
-      .i.fab.fa-github
-  .footer__right
+    Favorite article
+    - @contents.each do |content|
+      .favorite__list
+        .favorite__list--image
+          = image_tag content.image
+        .favorite__list--name
+          = content.name
+= render 'shared/footer'
