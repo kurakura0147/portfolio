@@ -13,6 +13,8 @@
   &__logo {
     font-size: 35px;
     font-weight: bold;
+    color: black;
+    text-decoration: none;
   }
   &__right {
     display: flex;
@@ -80,6 +82,7 @@ li a:hover{
       margin: 20px;
       display: flex;
       border: 1px solid #D4D4D4;
+      text-decoration: none;
     }
   }
   &__right {
@@ -100,6 +103,13 @@ li a:hover{
     min-width: 260px;
     height: 180px;
     border-right: 1px solid #D4D4D4;
+  }
+  &__title {
+    color:black;
+    font-size: 22px;
+  }
+  &__text {
+    color: black;
   }
   &__time {
     color: gray;
@@ -127,7 +137,9 @@ li a:hover{
     }
   }
   &--name {
-    min-height: 50px;
+    min-height: 40px;
+    font-size: 20px;
+    padding: 10px;
   }
 
 }
