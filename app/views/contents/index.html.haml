@@ -1,0 +1,25 @@
+= render 'shared/header'
+
+.main-content
+  .main-content__left
+    - @contents.each do |content|
+      .main-content__left--article
+        = image_tag content.image , class: "article__image"
+        .article__list
+          .article__title
+            = "タイトル :#{content.name}"
+          .article__text
+            = content.text
+          .article__time
+            .i.far.fa-clock
+            = content.created_at.strftime("%Y/%m/%d %H:%M")
+
+  .main-content__right
+    Favorite article
+    - @contents.each do |content|
+      .favorite__list
+        .favorite__list--image
+          = image_tag content.image
+        .favorite__list--name
+          = content.name
+= render 'shared/footer'
