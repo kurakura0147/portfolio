@@ -6,15 +6,44 @@
       .i.fab.fa-twitter
       .i.fab.fa-facebook
     .header__right--menu
-      = link_to user_session_path do
+      / = link_to user_session_path do
+      .down-menu
         .i.fas.fa-bars
+        %ul.child
+          %li
+            = link_to new_content_path do
+              .i.far.fa-edit
+              記事の投稿
+          %li
+            = link_to "" do
+              .i.far.fa-thumbs-up
+              お気に入りの確認
+          %li
+            = link_to "" do
+              .i.far.fa-eye
+              投稿した記事の確認
     .header__right--account
-      - if user_signed_in?
-        =link_to new_user_registration_path do
-          .i.fas.fa-user
-      - else
-        =link_to destroy_user_session_path do
-          .i.fas.fa-user
+      .down-menu
+        .i.fas.fa-user-circle
+          %ul.child
+            - if user_signed_in?
+              %li
+                = link_to new_user_registration_path do
+                  .i.fas.fa-user-edit
+                  ユーザー情報
+              %li
+                = link_to destroy_user_session_path , method: "delete" do
+                  .i.fas.fa-sign-out-alt
+                  ログアウト
+            - else
+              %li
+                = link_to new_user_registration_path do
+                  .i.fas.fa-user-plus
+                  ユーザー登録
+              %li
+                = link_to user_session_path do
+                  .i.fas.fa-sign-in-alt
+                  ログイン
     .header__right--search
       =link_to destroy_user_session_path, method: "delete" do
         .i.fas.fa-search
