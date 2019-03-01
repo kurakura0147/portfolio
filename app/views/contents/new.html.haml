@@ -1,4 +1,4 @@
-
+= render 'shared/header'
 
 = form_for @contents do |f|
   =f.label :name
@@ -8,3 +8,5 @@
   =f.label :image
   =f.file_field :image
   =f.submit "OK"
+
+= render 'shared/footer'

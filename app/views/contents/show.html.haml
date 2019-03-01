@@ -1,0 +1,11 @@
+= render 'shared/header'
+
+= image_tag @contents.image
+= @contents.name
+= @contents.text
+= @contents.created_at.strftime("%Y/%m/%d %H:%M")
+
+= link_to edit_content_path do
+  編集画面に
+
+= render 'shared/footer'

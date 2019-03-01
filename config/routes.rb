@@ -3,6 +3,6 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   root 'contents#index'
-  resources :contents, only: %i(index new create)
+  resources :contents, only: %i(index show new create edit update)
 
 end
