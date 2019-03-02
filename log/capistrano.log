@@ -671,3 +671,243 @@ In Gemfile:
   INFO [b1988f03] Running /usr/bin/env echo "Branch master (at 52085c473d7034a8f0861cdce3a604697375dda0) deployed as release 20190302142334 by tabatayuuta" >> /var/www/portfolio/revisions.log as ec2-user@52.192.224.164
  DEBUG [b1988f03] Command: cd /var/www/portfolio/releases && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.1" ; /usr/bin/env echo "Branch master (at 52085c473d7034a8f0861cdce3a604697375dda0) deployed as release 20190302142334 by tabatayuuta" >> /var/www/portfolio/revisions.log )
   INFO [7fc230fd] Finished in 0.110 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2019-03-03 00:12:27 +0900 cap production deploy
+  INFO ---------------------------------------------------------------------------
+ DEBUG [5862050e] Running [ -d $HOME/.rbenv/versions/2.3.1 ] as ec2-user@52.192.224.164
+ DEBUG [5862050e] Command: [ -d $HOME/.rbenv/versions/2.3.1 ]
+ DEBUG [d6876438] Finished in 0.690 seconds with exit status 0 (successful).
+  INFO [d78b48ae] Running /usr/bin/env mkdir -p /tmp as ec2-user@52.192.224.164
+ DEBUG [d78b48ae] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.1" ; /usr/bin/env mkdir -p /tmp )
+  INFO [4782b69e] Finished in 0.094 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-portfolio-production-tabatayuuta.sh 0.0%
+  INFO Uploading /tmp/git-ssh-portfolio-production-tabatayuuta.sh 100.0%
+  INFO [2da5125d] Running /usr/bin/env chmod 700 /tmp/git-ssh-portfolio-production-tabatayuuta.sh as ec2-user@52.192.224.164
+ DEBUG [2da5125d] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.1" ; /usr/bin/env chmod 700 /tmp/git-ssh-portfolio-production-tabatayuuta.sh )
+  INFO [3fc58079] Finished in 0.110 seconds with exit status 0 (successful).
+  INFO [6d28a666] Running /usr/bin/env git ls-remote git@github.com:kurakura0147/portfolio.git HEAD as ec2-user@52.192.224.164
+ DEBUG [6d28a666] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.1" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-portfolio-production-tabatayuuta.sh" ; /usr/bin/env git ls-remote git@github.com:kurakura0147/portfolio.git HEAD )
+ DEBUG [37848def] 	acdded74b78af239a37b161c8bf80b20a0b8f90f	HEAD
+  INFO [37848def] Finished in 1.597 seconds with exit status 0 (successful).
+  INFO [202383eb] Running /usr/bin/env mkdir -p /var/www/portfolio/shared /var/www/portfolio/releases as ec2-user@52.192.224.164
+ DEBUG [202383eb] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.1" ; /usr/bin/env mkdir -p /var/www/portfolio/shared /var/www/portfolio/releases )
+  INFO [1aae2463] Finished in 0.051 seconds with exit status 0 (successful).
+  INFO [90c1d182] Running /usr/bin/env mkdir -p /var/www/portfolio/shared/log /var/www/portfolio/shared/tmp/pids /var/www/portfolio/shared/tmp/cache /var/www/portfolio/shared/tmp/sockets /var/www/portfolio/shared/vendor/bundle /var/www/portfolio/shared/public/system /var/www/portfolio/shared/public/uploads /var/www/portfolio/shared/public/assets as ec2-user@52.192.224.164
+ DEBUG [90c1d182] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.1" ; /usr/bin/env mkdir -p /var/www/portfolio/shared/log /var/www/portfolio/shared/tmp/pids /var/www/portfolio/shared/tmp/cache /var/www/portfolio/shared/tmp/sockets /var/www/portfolio/shared/vendor/bundle /var/www/portfolio/shared/public/system /var/www/portfolio/shared/public/uploads /var/www/portfolio/shared/public/assets )
+  INFO [cd5bc8f9] Finished in 0.109 seconds with exit status 0 (successful).
+ DEBUG [0529c95b] Running [ -f /var/www/portfolio/current/REVISION ] as ec2-user@52.192.224.164
+ DEBUG [0529c95b] Command: [ -f /var/www/portfolio/current/REVISION ]
+ DEBUG [633e8bf1] Finished in 0.093 seconds with exit status 0 (successful).
+ DEBUG [063cf5f1] Running /usr/bin/env cat /var/www/portfolio/current/REVISION 2>/dev/null as ec2-user@52.192.224.164
+ DEBUG [063cf5f1] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.1" ; /usr/bin/env cat /var/www/portfolio/current/REVISION 2>/dev/null )
+ DEBUG [d653559c] 	52085c473d7034a8f0861cdce3a604697375dda0
+ DEBUG [d653559c] Finished in 0.102 seconds with exit status 0 (successful).
+ DEBUG [cb30b13a] Running [ -f /var/www/portfolio/repo/HEAD ] as ec2-user@52.192.224.164
+ DEBUG [cb30b13a] Command: [ -f /var/www/portfolio/repo/HEAD ]
+ DEBUG [fa5acf99] Finished in 0.093 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /var/www/portfolio/repo
+ DEBUG [9427ce34] Running if test ! -d /var/www/portfolio/repo; then echo "Directory does not exist '/var/www/portfolio/repo'" 1>&2; false; fi as ec2-user@52.192.224.164
+ DEBUG [9427ce34] Command: if test ! -d /var/www/portfolio/repo; then echo "Directory does not exist '/var/www/portfolio/repo'" 1>&2; false; fi
+ DEBUG [1b9c15aa] Finished in 0.101 seconds with exit status 0 (successful).
+  INFO [8180090d] Running /usr/bin/env git remote set-url origin git@github.com:kurakura0147/portfolio.git as ec2-user@52.192.224.164
+ DEBUG [8180090d] Command: cd /var/www/portfolio/repo && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.1" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-portfolio-production-tabatayuuta.sh" ; /usr/bin/env git remote set-url origin git@github.com:kurakura0147/portfolio.git )
+  INFO [b7565354] Finished in 0.097 seconds with exit status 0 (successful).
+  INFO [5f172d97] Running /usr/bin/env git remote update --prune as ec2-user@52.192.224.164
+ DEBUG [5f172d97] Command: cd /var/www/portfolio/repo && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.1" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-portfolio-production-tabatayuuta.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [dba5b7fa] 	Fetching origin
+ DEBUG [dba5b7fa] 	From github.com:kurakura0147/portfolio
+ * [new branch]      fogの導入      -> fogの導入
+   52085c4..acdded7  master            -> master
+ * [new ref]         refs/pull/12/head -> refs/pull/12/head
+  INFO [dba5b7fa] Finished in 1.911 seconds with exit status 0 (successful).
+ DEBUG [137eef17] Running if test ! -d /var/www/portfolio/repo; then echo "Directory does not exist '/var/www/portfolio/repo'" 1>&2; false; fi as ec2-user@52.192.224.164
+ DEBUG [137eef17] Command: if test ! -d /var/www/portfolio/repo; then echo "Directory does not exist '/var/www/portfolio/repo'" 1>&2; false; fi
+ DEBUG [7723cb60] Finished in 0.094 seconds with exit status 0 (successful).
+  INFO [4fa38101] Running /usr/bin/env mkdir -p /var/www/portfolio/releases/20190302151230 as ec2-user@52.192.224.164
+ DEBUG [4fa38101] Command: cd /var/www/portfolio/repo && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.1" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-portfolio-production-tabatayuuta.sh" ; /usr/bin/env mkdir -p /var/www/portfolio/releases/20190302151230 )
+  INFO [c3f88c56] Finished in 0.092 seconds with exit status 0 (successful).
+  INFO [7836df3e] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/portfolio/releases/20190302151230 as ec2-user@52.192.224.164
+ DEBUG [7836df3e] Command: cd /var/www/portfolio/repo && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.1" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-portfolio-production-tabatayuuta.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/portfolio/releases/20190302151230 )
+  INFO [adccfc9e] Finished in 0.111 seconds with exit status 0 (successful).
+ DEBUG [e53cce53] Running if test ! -d /var/www/portfolio/repo; then echo "Directory does not exist '/var/www/portfolio/repo'" 1>&2; false; fi as ec2-user@52.192.224.164
+ DEBUG [e53cce53] Command: if test ! -d /var/www/portfolio/repo; then echo "Directory does not exist '/var/www/portfolio/repo'" 1>&2; false; fi
+ DEBUG [d1d83e90] Finished in 0.094 seconds with exit status 0 (successful).
+ DEBUG [09efaa26] Running /usr/bin/env git rev-list --max-count=1 master as ec2-user@52.192.224.164
+ DEBUG [09efaa26] Command: cd /var/www/portfolio/repo && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.1" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-portfolio-production-tabatayuuta.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [f8bdf4c9] 	acdded74b78af239a37b161c8bf80b20a0b8f90f
+ DEBUG [f8bdf4c9] Finished in 0.133 seconds with exit status 0 (successful).
+ DEBUG [8254d0c8] Running if test ! -d /var/www/portfolio/releases/20190302151230; then echo "Directory does not exist '/var/www/portfolio/releases/20190302151230'" 1>&2; false; fi as ec2-user@52.192.224.164
+ DEBUG [8254d0c8] Command: if test ! -d /var/www/portfolio/releases/20190302151230; then echo "Directory does not exist '/var/www/portfolio/releases/20190302151230'" 1>&2; false; fi
+ DEBUG [e1e8400c] Finished in 0.095 seconds with exit status 0 (successful).
+  INFO [092bf97f] Running /usr/bin/env echo "acdded74b78af239a37b161c8bf80b20a0b8f90f" > REVISION as ec2-user@52.192.224.164
+ DEBUG [092bf97f] Command: cd /var/www/portfolio/releases/20190302151230 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.1" ; /usr/bin/env echo "acdded74b78af239a37b161c8bf80b20a0b8f90f" > REVISION )
+  INFO [671bddfc] Finished in 0.096 seconds with exit status 0 (successful).
+  INFO [dc8e3364] Running /usr/bin/env mkdir -p /var/www/portfolio/releases/20190302151230 /var/www/portfolio/releases/20190302151230/tmp /var/www/portfolio/releases/20190302151230/vendor /var/www/portfolio/releases/20190302151230/public as ec2-user@52.192.224.164
+ DEBUG [dc8e3364] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.1" ; /usr/bin/env mkdir -p /var/www/portfolio/releases/20190302151230 /var/www/portfolio/releases/20190302151230/tmp /var/www/portfolio/releases/20190302151230/vendor /var/www/portfolio/releases/20190302151230/public )
+  INFO [708622a6] Finished in 0.094 seconds with exit status 0 (successful).
+ DEBUG [7900c8b8] Running [ -L /var/www/portfolio/releases/20190302151230/log ] as ec2-user@52.192.224.164
+ DEBUG [7900c8b8] Command: [ -L /var/www/portfolio/releases/20190302151230/log ]
+ DEBUG [361a39a0] Finished in 0.094 seconds with exit status 1 (failed).
+ DEBUG [01ad6df5] Running [ -d /var/www/portfolio/releases/20190302151230/log ] as ec2-user@52.192.224.164
+ DEBUG [01ad6df5] Command: [ -d /var/www/portfolio/releases/20190302151230/log ]
+ DEBUG [1786cf07] Finished in 0.092 seconds with exit status 0 (successful).
+  INFO [a49ae41d] Running /usr/bin/env rm -rf /var/www/portfolio/releases/20190302151230/log as ec2-user@52.192.224.164
+ DEBUG [a49ae41d] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.1" ; /usr/bin/env rm -rf /var/www/portfolio/releases/20190302151230/log )
+  INFO [aa0fbfe2] Finished in 0.094 seconds with exit status 0 (successful).
+  INFO [7ee52311] Running /usr/bin/env ln -s /var/www/portfolio/shared/log /var/www/portfolio/releases/20190302151230/log as ec2-user@52.192.224.164
+ DEBUG [7ee52311] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.1" ; /usr/bin/env ln -s /var/www/portfolio/shared/log /var/www/portfolio/releases/20190302151230/log )
+  INFO [b8ca32f2] Finished in 0.094 seconds with exit status 0 (successful).
+ DEBUG [93832517] Running [ -L /var/www/portfolio/releases/20190302151230/tmp/pids ] as ec2-user@52.192.224.164
+ DEBUG [93832517] Command: [ -L /var/www/portfolio/releases/20190302151230/tmp/pids ]
+ DEBUG [4b7b768a] Finished in 0.095 seconds with exit status 1 (failed).
+ DEBUG [dffd83db] Running [ -d /var/www/portfolio/releases/20190302151230/tmp/pids ] as ec2-user@52.192.224.164
+ DEBUG [dffd83db] Command: [ -d /var/www/portfolio/releases/20190302151230/tmp/pids ]
+ DEBUG [00dac045] Finished in 0.095 seconds with exit status 0 (successful).
+  INFO [2795951e] Running /usr/bin/env rm -rf /var/www/portfolio/releases/20190302151230/tmp/pids as ec2-user@52.192.224.164
+ DEBUG [2795951e] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.1" ; /usr/bin/env rm -rf /var/www/portfolio/releases/20190302151230/tmp/pids )
+  INFO [9d8e12bd] Finished in 0.179 seconds with exit status 0 (successful).
+  INFO [c90db33b] Running /usr/bin/env ln -s /var/www/portfolio/shared/tmp/pids /var/www/portfolio/releases/20190302151230/tmp/pids as ec2-user@52.192.224.164
+ DEBUG [c90db33b] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.1" ; /usr/bin/env ln -s /var/www/portfolio/shared/tmp/pids /var/www/portfolio/releases/20190302151230/tmp/pids )
+  INFO [c5090fa8] Finished in 0.094 seconds with exit status 0 (successful).
+ DEBUG [006f9010] Running [ -L /var/www/portfolio/releases/20190302151230/tmp/cache ] as ec2-user@52.192.224.164
+ DEBUG [006f9010] Command: [ -L /var/www/portfolio/releases/20190302151230/tmp/cache ]
+ DEBUG [2c7335dd] Finished in 0.095 seconds with exit status 1 (failed).
+ DEBUG [fdb05e94] Running [ -d /var/www/portfolio/releases/20190302151230/tmp/cache ] as ec2-user@52.192.224.164
+ DEBUG [fdb05e94] Command: [ -d /var/www/portfolio/releases/20190302151230/tmp/cache ]
+ DEBUG [7a5b1c0e] Finished in 0.091 seconds with exit status 1 (failed).
+  INFO [b37254b4] Running /usr/bin/env ln -s /var/www/portfolio/shared/tmp/cache /var/www/portfolio/releases/20190302151230/tmp/cache as ec2-user@52.192.224.164
+ DEBUG [b37254b4] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.1" ; /usr/bin/env ln -s /var/www/portfolio/shared/tmp/cache /var/www/portfolio/releases/20190302151230/tmp/cache )
+  INFO [238fd419] Finished in 0.092 seconds with exit status 0 (successful).
+ DEBUG [2c4dc5a6] Running [ -L /var/www/portfolio/releases/20190302151230/tmp/sockets ] as ec2-user@52.192.224.164
+ DEBUG [2c4dc5a6] Command: [ -L /var/www/portfolio/releases/20190302151230/tmp/sockets ]
+ DEBUG [1a66e68e] Finished in 0.094 seconds with exit status 1 (failed).
+ DEBUG [bba50f02] Running [ -d /var/www/portfolio/releases/20190302151230/tmp/sockets ] as ec2-user@52.192.224.164
+ DEBUG [bba50f02] Command: [ -d /var/www/portfolio/releases/20190302151230/tmp/sockets ]
+ DEBUG [a2d96a95] Finished in 0.092 seconds with exit status 1 (failed).
+  INFO [3b91f612] Running /usr/bin/env ln -s /var/www/portfolio/shared/tmp/sockets /var/www/portfolio/releases/20190302151230/tmp/sockets as ec2-user@52.192.224.164
+ DEBUG [3b91f612] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.1" ; /usr/bin/env ln -s /var/www/portfolio/shared/tmp/sockets /var/www/portfolio/releases/20190302151230/tmp/sockets )
+  INFO [b103a0bc] Finished in 0.093 seconds with exit status 0 (successful).
+ DEBUG [99853986] Running [ -L /var/www/portfolio/releases/20190302151230/vendor/bundle ] as ec2-user@52.192.224.164
+ DEBUG [99853986] Command: [ -L /var/www/portfolio/releases/20190302151230/vendor/bundle ]
+ DEBUG [4b0c2f1b] Finished in 0.095 seconds with exit status 1 (failed).
+ DEBUG [df6591b1] Running [ -d /var/www/portfolio/releases/20190302151230/vendor/bundle ] as ec2-user@52.192.224.164
+ DEBUG [df6591b1] Command: [ -d /var/www/portfolio/releases/20190302151230/vendor/bundle ]
+ DEBUG [c9bf9034] Finished in 0.091 seconds with exit status 1 (failed).
+  INFO [3dd424f4] Running /usr/bin/env ln -s /var/www/portfolio/shared/vendor/bundle /var/www/portfolio/releases/20190302151230/vendor/bundle as ec2-user@52.192.224.164
+ DEBUG [3dd424f4] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.1" ; /usr/bin/env ln -s /var/www/portfolio/shared/vendor/bundle /var/www/portfolio/releases/20190302151230/vendor/bundle )
+  INFO [610888d3] Finished in 0.181 seconds with exit status 0 (successful).
+ DEBUG [0201d744] Running [ -L /var/www/portfolio/releases/20190302151230/public/system ] as ec2-user@52.192.224.164
+ DEBUG [0201d744] Command: [ -L /var/www/portfolio/releases/20190302151230/public/system ]
+ DEBUG [fc58870f] Finished in 0.096 seconds with exit status 1 (failed).
+ DEBUG [fbbd212c] Running [ -d /var/www/portfolio/releases/20190302151230/public/system ] as ec2-user@52.192.224.164
+ DEBUG [fbbd212c] Command: [ -d /var/www/portfolio/releases/20190302151230/public/system ]
+ DEBUG [f1102ba6] Finished in 0.096 seconds with exit status 1 (failed).
+  INFO [08fdb785] Running /usr/bin/env ln -s /var/www/portfolio/shared/public/system /var/www/portfolio/releases/20190302151230/public/system as ec2-user@52.192.224.164
+ DEBUG [08fdb785] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.1" ; /usr/bin/env ln -s /var/www/portfolio/shared/public/system /var/www/portfolio/releases/20190302151230/public/system )
+  INFO [0e7ed4ef] Finished in 0.094 seconds with exit status 0 (successful).
+ DEBUG [cf384e39] Running [ -L /var/www/portfolio/releases/20190302151230/public/uploads ] as ec2-user@52.192.224.164
+ DEBUG [cf384e39] Command: [ -L /var/www/portfolio/releases/20190302151230/public/uploads ]
+ DEBUG [3226597d] Finished in 0.092 seconds with exit status 1 (failed).
+ DEBUG [139209d4] Running [ -d /var/www/portfolio/releases/20190302151230/public/uploads ] as ec2-user@52.192.224.164
+ DEBUG [139209d4] Command: [ -d /var/www/portfolio/releases/20190302151230/public/uploads ]
+ DEBUG [20fb3350] Finished in 0.099 seconds with exit status 0 (successful).
+  INFO [a1bfa33b] Running /usr/bin/env rm -rf /var/www/portfolio/releases/20190302151230/public/uploads as ec2-user@52.192.224.164
+ DEBUG [a1bfa33b] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.1" ; /usr/bin/env rm -rf /var/www/portfolio/releases/20190302151230/public/uploads )
+  INFO [e68bce90] Finished in 0.109 seconds with exit status 0 (successful).
+  INFO [79a1a6ca] Running /usr/bin/env ln -s /var/www/portfolio/shared/public/uploads /var/www/portfolio/releases/20190302151230/public/uploads as ec2-user@52.192.224.164
+ DEBUG [79a1a6ca] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.1" ; /usr/bin/env ln -s /var/www/portfolio/shared/public/uploads /var/www/portfolio/releases/20190302151230/public/uploads )
+  INFO [0ad155af] Finished in 0.111 seconds with exit status 0 (successful).
+ DEBUG [1fcf917c] Running [ -L /var/www/portfolio/releases/20190302151230/public/assets ] as ec2-user@52.192.224.164
+ DEBUG [1fcf917c] Command: [ -L /var/www/portfolio/releases/20190302151230/public/assets ]
+ DEBUG [486e8835] Finished in 0.094 seconds with exit status 1 (failed).
+ DEBUG [a01a70b6] Running [ -d /var/www/portfolio/releases/20190302151230/public/assets ] as ec2-user@52.192.224.164
+ DEBUG [a01a70b6] Command: [ -d /var/www/portfolio/releases/20190302151230/public/assets ]
+ DEBUG [ca1d6f98] Finished in 0.092 seconds with exit status 1 (failed).
+  INFO [1f5ae02e] Running /usr/bin/env ln -s /var/www/portfolio/shared/public/assets /var/www/portfolio/releases/20190302151230/public/assets as ec2-user@52.192.224.164
+ DEBUG [1f5ae02e] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.1" ; /usr/bin/env ln -s /var/www/portfolio/shared/public/assets /var/www/portfolio/releases/20190302151230/public/assets )
+  INFO [bb7c1a32] Finished in 0.161 seconds with exit status 0 (successful).
+ DEBUG [1880a836] Running if test ! -d /var/www/portfolio/releases/20190302151230; then echo "Directory does not exist '/var/www/portfolio/releases/20190302151230'" 1>&2; false; fi as ec2-user@52.192.224.164
+ DEBUG [1880a836] Command: if test ! -d /var/www/portfolio/releases/20190302151230; then echo "Directory does not exist '/var/www/portfolio/releases/20190302151230'" 1>&2; false; fi
+ DEBUG [2c80eb53] Finished in 0.096 seconds with exit status 0 (successful).
+ DEBUG [b4b0d1b6] Running $HOME/.rbenv/bin/rbenv exec bundle check --path /var/www/portfolio/shared/bundle as ec2-user@52.192.224.164
+ DEBUG [b4b0d1b6] Command: cd /var/www/portfolio/releases/20190302151230 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.1" ; $HOME/.rbenv/bin/rbenv exec bundle check --path /var/www/portfolio/shared/bundle )
+ DEBUG [fdc36f5b] 	The dependency tzinfo-data (>= 0) will be unused by any of the platforms Bundler is installing for. Bundler is installing for ruby but the dependency is only for x86-mingw32, x86-mswin32, x64-mingw32, java. To add those platforms to the bundle, run `bundle lock --add-platform x86-mingw32 x86-mswin32 x64-mingw32 java`.
+ DEBUG [fdc36f5b] 	The following gems are missing
+ DEBUG [fdc36f5b] 	 * net-ssh (5.1.0)
+ DEBUG [fdc36f5b] 	 * net-scp (1.2.1)
+ DEBUG [fdc36f5b] 	 * sshkit (1.18.2)
+ DEBUG [fdc36f5b] 	 * airbrussh (1.3.1)
+ DEBUG [fdc36f5b] 	 * bindex (0.5.0)
+ DEBUG [fdc36f5b] 	 * byebug (11.0.0)
+ DEBUG [fdc36f5b] 	 * capistrano (3.11.0)
+ DEBUG [fdc36f5b] 	 * capistrano-bundler (1.5.0)
+ DEBUG [fdc36f5b] 	 * capistrano-rails (1.4.0)
+ DEBUG [fdc36f5b] 	 * capistrano-rbenv (2.1.4)
+ DEBUG [fdc36f5b] 	 * capistrano3-unicorn (0.2.1)
+ DEBUG [fdc36f5b] 	 * coderay (1.1.2)
+ DEBUG [fdc36f5b] 	 * excon (0.62.0)
+ DEBUG [fdc36f5b] 	 * formatador (0.2.5)
+ DEBUG [fdc36f5b] 	 * fog-core (2.1.2)
+ DEBUG [fdc36f5b] 	 * fog-json (1.2.0)
+ DEBUG [fdc36f5b] 	 * fog-xml (0.1.3)
+ DEBUG [fdc36f5b] 	 * ipaddress (0.8.3)
+ DEBUG [fdc36f5b] 	 * fog-aws (3.3.0)
+ DEBUG [fdc36f5b] 	 * listen (3.0.8)
+ DEBUG [fdc36f5b] 	 * pry (0.12.2)
+ DEBUG [fdc36f5b] 	 * pry-byebug (3.7.0)
+ DEBUG [fdc36f5b] 	 * pry-rails (0.3.9)
+ DEBUG [fdc36f5b] 	 * spring (2.0.2)
+ DEBUG [fdc36f5b] 	 * spring-watcher-listen (2.0.1)
+ DEBUG [fdc36f5b] 	 * web-console (3.7.0)
+ DEBUG [fdc36f5b] 	Install missing gems with `bundle install`
+ DEBUG [fdc36f5b] Finished in 0.316 seconds with exit status 1 (failed).
+  INFO [49c66012] Running $HOME/.rbenv/bin/rbenv exec bundle install --path /var/www/portfolio/shared/bundle --jobs 4 --without development test --deployment --quiet as ec2-user@52.192.224.164
+ DEBUG [49c66012] Command: cd /var/www/portfolio/releases/20190302151230 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.1" ; $HOME/.rbenv/bin/rbenv exec bundle install --path /var/www/portfolio/shared/bundle --jobs 4 --without development test --deployment --quiet )
+  INFO [9b67ba79] Finished in 3.808 seconds with exit status 0 (successful).
+ DEBUG [40934034] Running if test ! -d /var/www/portfolio/releases/20190302151230; then echo "Directory does not exist '/var/www/portfolio/releases/20190302151230'" 1>&2; false; fi as ec2-user@52.192.224.164
+ DEBUG [40934034] Command: if test ! -d /var/www/portfolio/releases/20190302151230; then echo "Directory does not exist '/var/www/portfolio/releases/20190302151230'" 1>&2; false; fi
+ DEBUG [0262262e] Finished in 0.142 seconds with exit status 0 (successful).
+  INFO [7b6d8d08] Running $HOME/.rbenv/bin/rbenv exec bundle exec rake assets:precompile as ec2-user@52.192.224.164
+ DEBUG [7b6d8d08] Command: cd /var/www/portfolio/releases/20190302151230 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.1" RAILS_ENV="production" RAILS_GROUPS="" ; $HOME/.rbenv/bin/rbenv exec bundle exec rake assets:precompile )
+ DEBUG [816dcbbd] 	rake aborted!
+ DEBUG [816dcbbd] 	ArgumentError: Missing required arguments: aws_access_key_id, aws_secret_access_key
+ DEBUG [816dcbbd] 	/var/www/portfolio/shared/bundle/ruby/2.3.0/gems/fog-core-2.1.2/lib/fog/core/service.rb:244:in `validate_options'
+/var/www/portfolio/shared/bundle/ruby/2.3.0/gems/fog-core-2.1.2/lib/fog/core/service.rb:268:in `handle_settings'
+/var/www/portfolio/shared/bundle/ruby/2.3.0/gems/fog-core-2.1.2/lib/fog/core/service.rb:98:in `new'
+/var/www/portfolio/shared/bundle/ruby/2.3.0/gems/fog-core-2.1.2/lib/fog/core/services_mixin.rb:16:in `new'
+/var/www/portfolio/shared/bundle/ruby/2.3.0/gems/carrierwave-1.3.1/lib/carrierwave/uploader/configuration.rb:126:in `eager_load_fog'
+/var/www/portfolio/shared/bundle/ruby/2.3.0/gems/carrierwave-1.3.1/lib/carrierwave/uploader/configuration.rb:139:in `fog_credentials='
+/var/www/portfolio/releases/20190302151230/config/initializers/carrierwave.rb:8:in `block in <top (required)>'
+/var/www/portfolio/shared/bundle/ruby/2.3.0/gems/carrierwave-1.3.1/lib/carrierwave/uploader/configuration.rb:161:in `configure'
+/var/www/portfolio/shared/bundle/ruby/2.3.0/gems/carrierwave-1.3.1/lib/carrierwave.rb:14:in `configure'
+/var/www/portfolio/releases/20190302151230/config/initializers/carrierwave.rb:5:in `<top (required)>'
+/var/www/portfolio/shared/bundle/ruby/2.3.0/gems/activesupport-5.0.7.1/lib/active_support/dependencies.rb:287:in `load'
+/var/www/portfolio/shared/bundle/ruby/2.3.0/gems/activesupport-5.0.7.1/lib/active_support/dependencies.rb:287:in `block in load'
+/var/www/portfolio/shared/bundle/ruby/2.3.0/gems/activesupport-5.0.7.1/lib/active_support/dependencies.rb:259:in `load_dependency'
+/var/www/portfolio/shared/bundle/ruby/2.3.0/gems/activesupport-5.0.7.1/lib/active_support/dependencies.rb:287:in `load'
+/var/www/portfolio/shared/bundle/ruby/2.3.0/gems/railties-5.0.7.1/lib/rails/engine.rb:648:in `block in load_config_initializer'
+/var/www/portfolio/shared/bundle/ruby/2.3.0/gems/activesupport-5.0.7.1/lib/active_support/notifications.rb:166:in `instrument'
+/var/www/portfolio/shared/bundle/ruby/2.3.0/gems/railties-5.0.7.1/lib/rails/engine.rb:647:in `load_config_initializer'
+/var/www/portfolio/shared/bundle/ruby/2.3.0/gems/railties-5.0.7.1/lib/rails/engine.rb:612:in `block (2 levels) in <class:Engine>'
+/var/www/portfolio/shared/bundle/ruby/2.3.0/gems/railties-5.0.7.1/lib/rails/engine.rb:611:in `each'
+/var/www/portfolio/shared/bundle/ruby/2.3.0/gems/railties-5.0.7.1/lib/rails/engine.rb:611:in `block in <class:Engine>'
+/var/www/portfolio/shared/bundle/ruby/2.3.0/gems/railties-5.0.7.1/lib/rails/initializable.rb:30:in `instance_exec'
+/var/www/portfolio/shared/bundle/ruby/2.3.0/gems/railties-5.0.7.1/lib/rails/initializable.rb:30:in `run'
+/var/www/portfolio/shared/bundle/ruby/2.3.0/gems/railties-5.0.7.1/lib/rails/initializable.rb:55:in `block in run_initializers'
+/var/www/portfolio/shared/bundle/ruby/2.3.0/gems/railties-5.0.7.1/lib/rails/initializable.rb:44:in `each'
+/var/www/portfolio/shared/bundle/ruby/2.3.0/gems/railties-5.0.7.1/lib/rails/initializable.rb:44:in `tsort_each_child'
+/var/www/portfolio/shared/bundle/ruby/2.3.0/gems/railties-5.0.7.1/lib/rails/initializable.rb:54:in `run_initializers'
+/var/www/portfolio/shared/bundle/ruby/2.3.0/gems/railties-5.0.7.1/lib/rails/application.rb:352:in `initialize!'
+/var/www/portfolio/releases/20190302151230/config/environment.rb:5:in `<top (required)>'
+/var/www/portfolio/shared/bundle/ruby/2.3.0/gems/activesupport-5.0.7.1/lib/active_support/dependencies.rb:293:in `require'
+/var/www/portfolio/shared/bundle/ruby/2.3.0/gems/activesupport-5.0.7.1/lib/active_support/dependencies.rb:293:in `block in require'
+/var/www/portfolio/shared/bundle/ruby/2.3.0/gems/activesupport-5.0.7.1/lib/active_support/dependencies.rb:259:in `load_dependency'
+/var/www/portfolio/shared/bundle/ruby/2.3.0/gems/activesupport-5.0.7.1/lib/active_support/dependencies.rb:293:in `require'
+/var/www/portfolio/shared/bundle/ruby/2.3.0/gems/railties-5.0.7.1/lib/rails/application.rb:328:in `require_environment!'
+/var/www/portfolio/shared/bundle/ruby/2.3.0/gems/railties-5.0.7.1/lib/rails/application.rb:448:in `block in run_tasks_blocks'
+/var/www/portfolio/shared/bundle/ruby/2.3.0/gems/sprockets-rails-3.2.1/lib/sprockets/rails/task.rb:62:in `block (2 levels) in define'
+/var/www/portfolio/shared/bundle/ruby/2.3.0/gems/rake-12.3.2/exe/rake:27:in `<top (required)>'
+/home/ec2-user/.rbenv/versions/2.3.1/bin/bundle:23:in `load'
+/home/ec2-user/.rbenv/versions/2.3.1/bin/bundle:23:in `<main>'
+ DEBUG [816dcbbd] 	Tasks: TOP => environment
+ DEBUG [816dcbbd] 	(See full trace by running task with --trace)
