@@ -1,5 +1,5 @@
 # config valid only for current version of Capistrano
-lock '<Capistranoのバージョン>'
+lock '3.11.0'
 
 set :application, 'portfolio'
 set :repo_url,  'git@github.com:kurakura0147/portfolio.git'
