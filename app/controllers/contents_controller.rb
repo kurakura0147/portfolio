@@ -29,13 +29,15 @@ class ContentsController < ApplicationController
     redirect_to content_path
   end
 
+  def mypage
+
+  end
 
   private
 
   def params_content
     params.require(:content).permit(:name, :text, :image)
     # .merge(user_id: current_user.id )
-
   end
 
 

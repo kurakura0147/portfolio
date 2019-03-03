@@ -3,6 +3,10 @@
     .footer__left--text
       CHECK ME
     .footer__left--sns
+      = link_to  mypage_contents_path, class: 'footer__left--sns-text' do
+        .i.far.fa-address-card
+        ABOUT ME
       .i.fab.fa-twitter
-      .i.fab.fa-github
+      = link_to "https://github.com/kurakura0147", class: 'footer__left--sns-icon' do
+        .i.fab.fa-github
   .footer__right

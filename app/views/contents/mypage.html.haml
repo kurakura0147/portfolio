@@ -1,0 +1,49 @@
+= render 'shared/header'
+
+.mypage-content
+  .mypage-content__profile
+    .mypage-content__profile--name
+      ABOUT ME
+    .mypage__left
+      .mypage-content__profile--age
+        .i.fas.fa-caret-square-down
+        age: 26
+      .mypage-content__profile--career
+        .i.fas.fa-caret-square-down
+        前職: 法人営業 (3年間)
+      .mypage-content__profile--language
+        .i.fas.fa-caret-square-down
+        使用言語
+        .mypage-content__profile--language-front
+          フロントエンド :
+          HTML , haml
+          CSS , SCSS,
+          java script
+        .mypage-content__profile--language-back
+          バックエンド   :
+          ruby,
+          ruby on rails
+      .mypage-content__profile--apli
+        .i.fas.fa-caret-square-down
+        過去作成アプリ
+        .mypage-content__profile--apli-name
+          pictweet
+          chat-space
+          メルカリ（コピーサイト）
+      .mypage-content__profile--sns
+        github
+      .mypage-content__profile--now
+        .i.fas.fa-caret-square-down
+        NOW :
+        TECH::EXPERTにて学習中
+        .google-map
+          google map の埋め込み（渋谷）
+
+    .mypage__right
+      =image_tag "mypage-icon.png"
+
+
+
+
+
+= render 'shared/footer'

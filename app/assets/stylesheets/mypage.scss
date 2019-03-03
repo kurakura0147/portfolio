@@ -1,0 +1,51 @@
+.mypage-content {
+  height: calc(100vh - 170px);
+  width: 100%;
+  &__profile {
+    width: 900px;
+    max-height: 580px;
+    margin: 40px auto;
+    display: flex;
+    &--age {
+      border-bottom: 1px solid #D4D4D4;
+
+    }
+    &--career {
+      border-bottom: 1px solid #D4D4D4;
+    }
+    &--language {
+      border-bottom: 1px solid #D4D4D4;
+    }
+    &--apli {
+      border-bottom: 1px solid #D4D4D4;
+    }
+    &--now {
+      border-bottom: 1px solid #D4D4D4;
+    }
+    &--sns {
+      border-bottom: 1px solid #D4D4D4;
+    }
+  }
+}
+
+.google-map {
+  height: 240px;
+  background-color: pink;
+
+}
+
+.mypage__right {
+  width: 400px;
+  border: 2px solid #D4D4D4;
+  img {
+    height: 400px;
+    width: 360px;
+  }
+}
+
+.mypage__left {
+  width: 500px;
+  border: 2px solid #D4D4D4;
+  padding: 20px;
+
+}
