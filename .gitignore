@@ -1,3 +1,12 @@
-config/secrets.yml
+/.bundle
+
 public/uploads/*
 
+# Ignore all logfiles and tempfiles.
+/log/*
+/tmp/*
+!/log/.keep
+!/tmp/.keep
+
+# Ignore Byebug command history file.
+.byebug_historyconfig/secrets.yml
