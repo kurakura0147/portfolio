@@ -911,3 +911,30 @@ In Gemfile:
 /home/ec2-user/.rbenv/versions/2.3.1/bin/bundle:23:in `<main>'
  DEBUG [816dcbbd] 	Tasks: TOP => environment
  DEBUG [816dcbbd] 	(See full trace by running task with --trace)
+  INFO ---------------------------------------------------------------------------
+  INFO START 2019-03-03 13:01:01 +0900 cap production deploy
+  INFO ---------------------------------------------------------------------------
+ DEBUG [7f29aa4a] Running [ -d $HOME/.rbenv/versions/2.3.1 ] as ec2-user@52.192.224.164
+ DEBUG [7f29aa4a] Command: [ -d $HOME/.rbenv/versions/2.3.1 ]
+ DEBUG [1cea715b] Finished in 0.333 seconds with exit status 0 (successful).
+ DEBUG [ac1c1646] Running [ ! -d /var/www/portfolio/shared/config ] as ec2-user@52.192.224.164
+ DEBUG [ac1c1646] Command: [ ! -d /var/www/portfolio/shared/config ]
+ DEBUG [49e76bb5] Finished in 0.072 seconds with exit status 1 (failed).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2019-03-03 13:04:16 +0900 cap production deploy
+  INFO ---------------------------------------------------------------------------
+ DEBUG [b47ea669] Running [ -d $HOME/.rbenv/versions/2.3.1 ] as ec2-user@52.192.224.164
+ DEBUG [b47ea669] Command: [ -d $HOME/.rbenv/versions/2.3.1 ]
+ DEBUG [0226f7be] Finished in 0.397 seconds with exit status 0 (successful).
+ DEBUG [41ad832c] Running [ ! -d /var/www/portfolio/shared/config ] as ec2-user@52.192.224.164
+ DEBUG [41ad832c] Command: [ ! -d /var/www/portfolio/shared/config ]
+ DEBUG [282d1ea9] Finished in 0.092 seconds with exit status 1 (failed).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2019-03-03 13:05:55 +0900 cap production deploy
+  INFO ---------------------------------------------------------------------------
+ DEBUG [e4b8d566] Running [ -d $HOME/.rbenv/versions/2.3.1 ] as ec2-user@52.192.224.164
+ DEBUG [e4b8d566] Command: [ -d $HOME/.rbenv/versions/2.3.1 ]
+ DEBUG [e0fd49fb] Finished in 0.389 seconds with exit status 0 (successful).
+ DEBUG [88c6335e] Running [ ! -d /var/www/portfolio/shared/config ] as ec2-user@52.192.224.164
+ DEBUG [88c6335e] Command: [ ! -d /var/www/portfolio/shared/config ]
+ DEBUG [8238e551] Finished in 0.079 seconds with exit status 1 (failed).
