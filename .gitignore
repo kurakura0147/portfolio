@@ -1,6 +1,7 @@
 /.bundle
 
 public/uploads/*
+config/secrets.yml
 
 # Ignore all logfiles and tempfiles.
 /log/*
