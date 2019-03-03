@@ -13,3 +13,5 @@ config/secrets.yml
 .byebug_historyconfig/secrets.yml
 
 log/capistrano.log
+
+*.cache
