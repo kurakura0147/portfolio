@@ -11,3 +11,5 @@ config/secrets.yml
 
 # Ignore Byebug command history file.
 .byebug_historyconfig/secrets.yml
+
+log/capistrano.log
