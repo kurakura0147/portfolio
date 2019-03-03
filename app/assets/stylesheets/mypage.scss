@@ -8,7 +8,6 @@
     display: flex;
     &--age {
       border-bottom: 1px solid #D4D4D4;
-
     }
     &--career {
       border-bottom: 1px solid #D4D4D4;
@@ -25,18 +24,27 @@
     &--sns {
       border-bottom: 1px solid #D4D4D4;
     }
+    &--name {
+      border-bottom: 1px solid #D4D4D4;
+      text-align: center;
+      font-size: 20px;
+    }
+    &--image {
+      position: relative;
+      top: 50px;
+    }
   }
 }
 
 .google-map {
   height: 240px;
   background-color: pink;
-
 }
 
 .mypage__right {
   width: 400px;
   border: 2px solid #D4D4D4;
+  padding: 20px;
   img {
     height: 400px;
     width: 360px;
@@ -47,5 +55,4 @@
   width: 500px;
   border: 2px solid #D4D4D4;
   padding: 20px;
-
 }
