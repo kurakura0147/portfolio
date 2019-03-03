@@ -938,3 +938,12 @@ In Gemfile:
  DEBUG [88c6335e] Running [ ! -d /var/www/portfolio/shared/config ] as ec2-user@52.192.224.164
  DEBUG [88c6335e] Command: [ ! -d /var/www/portfolio/shared/config ]
  DEBUG [8238e551] Finished in 0.079 seconds with exit status 1 (failed).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2019-03-03 14:18:49 +0900 cap production deploy
+  INFO ---------------------------------------------------------------------------
+ DEBUG [9bc33a95] Running [ -d $HOME/.rbenv/versions/2.3.1 ] as ec2-user@52.192.224.164
+ DEBUG [9bc33a95] Command: [ -d $HOME/.rbenv/versions/2.3.1 ]
+ DEBUG [4c66dd16] Finished in 0.432 seconds with exit status 0 (successful).
+ DEBUG [72409e30] Running [ ! -d /var/www/portfolio/shared/config ] as ec2-user@52.192.224.164
+ DEBUG [72409e30] Command: [ ! -d /var/www/portfolio/shared/config ]
+ DEBUG [e7845eb6] Finished in 0.099 seconds with exit status 1 (failed).
