@@ -1,12 +1,14 @@
 class ContentsController < ApplicationController
 
+  before_action :authenticate_user!, except: [:index, :show, :search, :mypage ]
+  before_action :find_contents, only: [:show, :edit, :update, :destroy]
+
   def index
     @contents = Content.all
   end
 
   def new
     @contents = Content.new
-
   end
 
   def create
@@ -16,33 +18,28 @@ class ContentsController < ApplicationController
   end
 
   def show
-    @contents = Content.find(params[:id])
   end
 
   def edit
-    @contents = Content.find(params[:id])
   end
 
   def update
-    @contents = Content.find(params[:id])
     @contents.update(params_content)
     redirect_to content_path
   end
 
   def destroy
-    @contents = Content.find(params[:id])
     @contents.destroy
     redirect_to root_path
   end
 
   def mypage
-
   end
 
-def search
-    @contents = Content.where('name LIKE(?)', "%#{params[:search]}%")
-    @count = @contents.count
-end
+  def search
+      @contents = Content.where('name LIKE(?)', "%#{params[:search]}%")
+      @count = @contents.count
+  end
 
   private
 
@@ -51,7 +48,9 @@ end
     # .merge(user_id: current_user.id )
   end
 
-
+  def find_contents
+    @contents = Content.find(params[:id])
+  end
 
 end
 
