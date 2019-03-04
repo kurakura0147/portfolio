@@ -44,8 +44,6 @@
   }
 }
 
-
-
 //ドロップダウンメニュー
 ul.child{
   display: none;
@@ -60,12 +58,11 @@ ul.child{
     display: block;
     padding: 10px;
     text-decoration: none;
-    color: #9B9B9B;
-    background-color: #f5f5f5;
+    background-color: black;
     border: 1px solid #D4D4D4;
     a {
       text-decoration: none;
-      color: #9B9B9B;
+      color: #D4D4D4;
     }
     &:hover{
       opacity: 0.8;
@@ -73,7 +70,6 @@ ul.child{
     }
   }
 }
-
 
 //検索フォーム
 ul.child-search{
@@ -88,31 +84,19 @@ ul.child-search{
   }
   li.child-search{
     border: 1px solid #D4D4D4;
-    background-color: #f5f5f5;
+    background-color:black;
     padding: 10px 10px;
     display: block;
     text-decoration: none;
-    color: #9B9B9B;
+    color: #D4D4D4;
     border-radius: 20px;
     text-align: center;
     position: relative;
     input {
       width: 90%;
-      text-align: center;
-      opacity: 0.5;
-      z-index: 20;
-    }
-    button {
-      z-index: 60;
-      .search-button {
-        z-index: 60;
-      }
     }
   }
 }
-
-
-
 
 .main-content {
   padding: 40px 180px;
@@ -164,9 +148,7 @@ ul.child-search{
     bottom: 10px;
     right:10px;
   }
-
 }
-
 
 //サイドの記事
 .favorite__list {
@@ -188,9 +170,7 @@ ul.child-search{
     font-size: 20px;
     padding: 10px;
   }
-
 }
-
 
 .footer {
   color: white;
@@ -221,6 +201,3 @@ ul.child-search{
     }
   }
 }
-
-
-

@@ -15,3 +15,5 @@ config/secrets.yml
 log/capistrano.log
 
 *.cache
+
+*.log

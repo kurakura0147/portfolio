@@ -10204,3 +10204,127 @@ Processing by ContentsController#index as HTML
 Completed 200 OK in 56ms (Views: 51.7ms | ActiveRecord: 0.6ms)
 
 
+Started GET "/contents/1" for 127.0.0.1 at 2019-03-04 20:19:42 +0900
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by ContentsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mContent Load (0.4ms)[0m  [1m[34mSELECT  `contents`.* FROM `contents` WHERE `contents`.`id` = 1 LIMIT 1[0m
+  Rendering contents/show.html.haml within layouts/application
+  Rendered shared/_header.html.haml (22.1ms)
+  Rendered shared/_footer.html.haml (2.8ms)
+  Rendered contents/show.html.haml within layouts/application (36.1ms)
+Completed 200 OK in 603ms (Views: 521.9ms | ActiveRecord: 47.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-03-04 20:19:45 +0900
+Processing by ContentsController#index as HTML
+  Rendering contents/index.html.haml within layouts/application
+  Rendered shared/_header.html.haml (17.9ms)
+  [1m[36mContent Load (0.7ms)[0m  [1m[34mSELECT `contents`.* FROM `contents`[0m
+  Rendered shared/_footer.html.haml (5.1ms)
+  Rendered contents/index.html.haml within layouts/application (33.9ms)
+Completed 200 OK in 74ms (Views: 67.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/contents/1" for 127.0.0.1 at 2019-03-04 20:19:47 +0900
+Processing by ContentsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mContent Load (3.1ms)[0m  [1m[34mSELECT  `contents`.* FROM `contents` WHERE `contents`.`id` = 1 LIMIT 1[0m
+  Rendering contents/show.html.haml within layouts/application
+  Rendered shared/_header.html.haml (17.0ms)
+  Rendered shared/_footer.html.haml (6.0ms)
+  Rendered contents/show.html.haml within layouts/application (37.0ms)
+Completed 200 OK in 83ms (Views: 75.4ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/contents/1" for 127.0.0.1 at 2019-03-04 20:20:26 +0900
+Processing by ContentsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mContent Load (0.4ms)[0m  [1m[34mSELECT  `contents`.* FROM `contents` WHERE `contents`.`id` = 1 LIMIT 1[0m
+  Rendering contents/show.html.haml within layouts/application
+  Rendered shared/_header.html.haml (15.6ms)
+  Rendered shared/_footer.html.haml (5.3ms)
+  Rendered contents/show.html.haml within layouts/application (28.9ms)
+Completed 200 OK in 158ms (Views: 154.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-03-04 20:20:28 +0900
+Processing by ContentsController#index as HTML
+  Rendering contents/index.html.haml within layouts/application
+  Rendered shared/_header.html.haml (8.4ms)
+  [1m[36mContent Load (0.2ms)[0m  [1m[34mSELECT `contents`.* FROM `contents`[0m
+  Rendered shared/_footer.html.haml (2.5ms)
+  Rendered contents/index.html.haml within layouts/application (17.9ms)
+Completed 200 OK in 51ms (Views: 47.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-03-04 20:21:03 +0900
+Processing by ContentsController#index as HTML
+  Rendering contents/index.html.haml within layouts/application
+  Rendered shared/_header.html.haml (10.1ms)
+  [1m[36mContent Load (0.3ms)[0m  [1m[34mSELECT `contents`.* FROM `contents`[0m
+  Rendered shared/_footer.html.haml (3.0ms)
+  Rendered contents/index.html.haml within layouts/application (22.2ms)
+Completed 200 OK in 160ms (Views: 156.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-03-04 20:21:18 +0900
+Processing by ContentsController#index as HTML
+  Rendering contents/index.html.haml within layouts/application
+  Rendered shared/_header.html.haml (7.3ms)
+  [1m[36mContent Load (0.4ms)[0m  [1m[34mSELECT `contents`.* FROM `contents`[0m
+  Rendered shared/_footer.html.haml (4.0ms)
+  Rendered contents/index.html.haml within layouts/application (20.9ms)
+Completed 200 OK in 130ms (Views: 126.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-03-04 20:21:40 +0900
+Processing by ContentsController#index as HTML
+  Rendering contents/index.html.haml within layouts/application
+  Rendered shared/_header.html.haml (10.0ms)
+  [1m[36mContent Load (0.3ms)[0m  [1m[34mSELECT `contents`.* FROM `contents`[0m
+  Rendered shared/_footer.html.haml (5.4ms)
+  Rendered contents/index.html.haml within layouts/application (28.6ms)
+Completed 200 OK in 163ms (Views: 159.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-03-04 20:22:11 +0900
+Processing by ContentsController#index as HTML
+  Rendering contents/index.html.haml within layouts/application
+  Rendered shared/_header.html.haml (7.9ms)
+  [1m[36mContent Load (0.3ms)[0m  [1m[34mSELECT `contents`.* FROM `contents`[0m
+  Rendered shared/_footer.html.haml (4.3ms)
+  Rendered contents/index.html.haml within layouts/application (20.7ms)
+Completed 200 OK in 121ms (Views: 117.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-03-04 20:22:25 +0900
+Processing by ContentsController#index as HTML
+  Rendering contents/index.html.haml within layouts/application
+  Rendered shared/_header.html.haml (7.5ms)
+  [1m[36mContent Load (0.2ms)[0m  [1m[34mSELECT `contents`.* FROM `contents`[0m
+  Rendered shared/_footer.html.haml (3.9ms)
+  Rendered contents/index.html.haml within layouts/application (19.3ms)
+Completed 200 OK in 138ms (Views: 134.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-03-04 20:23:00 +0900
+Processing by ContentsController#index as HTML
+  Rendering contents/index.html.haml within layouts/application
+  Rendered shared/_header.html.haml (13.3ms)
+  [1m[36mContent Load (0.2ms)[0m  [1m[34mSELECT `contents`.* FROM `contents`[0m
+  Rendered shared/_footer.html.haml (5.2ms)
+  Rendered contents/index.html.haml within layouts/application (29.3ms)
+Completed 200 OK in 170ms (Views: 166.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-03-04 20:23:15 +0900
+Processing by ContentsController#index as HTML
+  Rendering contents/index.html.haml within layouts/application
+  Rendered shared/_header.html.haml (10.7ms)
+  [1m[36mContent Load (0.3ms)[0m  [1m[34mSELECT `contents`.* FROM `contents`[0m
+  Rendered shared/_footer.html.haml (4.5ms)
+  Rendered contents/index.html.haml within layouts/application (26.1ms)
+Completed 200 OK in 65ms (Views: 62.5ms | ActiveRecord: 0.3ms)
+
+
