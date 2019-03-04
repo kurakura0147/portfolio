@@ -39,6 +39,11 @@ class ContentsController < ApplicationController
 
   end
 
+def search
+    @contents = Content.where('name LIKE(?)', "%#{params[:search]}%")
+    @count = @contents.count
+end
+
   private
 
   def params_content

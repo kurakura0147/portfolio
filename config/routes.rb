@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :contents, only: %i(index show new create edit update destroy) do
     collection do
       get :mypage
+      get :search
     end
   end
 
