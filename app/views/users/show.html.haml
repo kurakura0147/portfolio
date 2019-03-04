@@ -1,0 +1,27 @@
+= render 'shared/header'
+
+.main-content
+  .main-content__left
+    = "#{current_user.nickname}さんの投稿一覧"
+    - @contents.each do |content|
+      =link_to  content_path(content) ,class: "main-content__left--article" do
+        = image_tag content.image , class: "article__image"
+        .article__list
+          .article__title
+            .i.far.fa-clipboard
+            = content.name
+          .article__text
+          .article__time
+            .i.far.fa-clock
+            = content.created_at.strftime("%Y/%m/%d %H:%M")
+
+  .main-content__right
+    いいね順
+    - @contents.each do |content|
+      .favorite__list
+        .favorite__list--image
+          = image_tag content.image
+        .favorite__list--name
+          = content.name
+
+= render 'shared/footer'

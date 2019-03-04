@@ -6,23 +6,24 @@
       .i.fab.fa-twitter
       .i.fab.fa-facebook
     .header__right--menu
-      / = link_to user_session_path do
       .down-menu
-        .i.fas.fa-bars
-        %ul.child
-          %li.child-hidden
-          %li.child
-            = link_to new_content_path do
-              .i.far.fa-edit
-              記事の投稿
-          %li.child
-            = link_to "" do
-              .i.far.fa-thumbs-up
-              お気に入りの確認
-          %li.child
-            = link_to "" do
-              .i.far.fa-eye
-              投稿した記事の確認
+        - if user_signed_in?
+          .i.fas.fa-bars
+          %ul.child
+            %li.child-hidden
+            %li.child
+              = link_to new_content_path do
+                .i.far.fa-edit
+                記事の投稿
+            %li.child
+              = link_to "" do
+                .i.far.fa-thumbs-up
+                お気に入りの確認
+            %li.child
+              = link_to user_path(id: current_user.id) do
+                .i.far.fa-eye
+                投稿した記事の確認
+        -else
     .header__right--account
       .down-menu
         .i.fas.fa-user-circle
