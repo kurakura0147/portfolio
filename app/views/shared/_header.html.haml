@@ -10,40 +10,49 @@
       .down-menu
         .i.fas.fa-bars
         %ul.child
-          %li
+          %li.child-hidden
+          %li.child
             = link_to new_content_path do
               .i.far.fa-edit
               記事の投稿
-          %li
+          %li.child
             = link_to "" do
               .i.far.fa-thumbs-up
               お気に入りの確認
-          %li
+          %li.child
             = link_to "" do
               .i.far.fa-eye
               投稿した記事の確認
     .header__right--account
       .down-menu
         .i.fas.fa-user-circle
-          %ul.child
-            - if user_signed_in?
-              %li
-                = link_to new_user_registration_path do
-                  .i.fas.fa-user-edit
-                  ユーザー情報
-              %li
-                = link_to destroy_user_session_path , method: "delete" do
-                  .i.fas.fa-sign-out-alt
-                  ログアウト
-            - else
-              %li
-                = link_to new_user_registration_path do
-                  .i.fas.fa-user-plus
-                  ユーザー登録
-              %li
-                = link_to user_session_path do
-                  .i.fas.fa-sign-in-alt
-                  ログイン
+        %ul.child
+          %li.child-hidden
+          - if user_signed_in?
+            %li.child
+              = link_to new_user_registration_path do
+                .i.fas.fa-user-edit
+                ユーザー情報
+            %li.child
+              = link_to destroy_user_session_path , method: "delete" do
+                .i.fas.fa-sign-out-alt
+                ログアウト
+          - else
+            %li.child
+              = link_to new_user_registration_path do
+                .i.fas.fa-user-plus
+                ユーザー登録
+            %li.child
+              = link_to user_session_path do
+                .i.fas.fa-sign-in-alt
+                ログイン
     .header__right--search
-      =link_to destroy_user_session_path, method: "delete" do
+      .down-menu
         .i.fas.fa-search
+        %ul.child-search
+          %li.child-hidden
+          %li.child-search
+            検索する記事のタイトルを入力してください (あいまい検索)
+            = form_tag( search_contents_path, :method => 'get' ) do
+              = text_field_tag :search
+              = button_tag "search"
