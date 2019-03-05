@@ -10,6 +10,9 @@
             .i.far.fa-clipboard
             = content.name
           .article__text
+          %object
+            .article__iine{:id => "likes_buttons_#{content.id}"}
+              = render partial: 'shared/like', locals: { content: content, likes: @likes}
           .article__time
             .i.far.fa-clock
             = content.created_at.strftime("%Y/%m/%d %H:%M")

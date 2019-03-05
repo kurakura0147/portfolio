@@ -142,6 +142,13 @@ ul.child-search{
   &__text {
     color: black;
   }
+  &__iine {
+    position: absolute;
+    bottom: 10px;
+    a {
+      text-decoration: none;
+    }
+  }
   &__time {
     color: gray;
     position: absolute;
