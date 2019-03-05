@@ -16758,3 +16758,388 @@ Processing by LikesController#destroy as JS
 Completed 200 OK in 82ms (Views: 46.3ms | ActiveRecord: 8.0ms)
 
 
+Started GET "/" for 127.0.0.1 at 2019-03-06 01:04:47 +0900
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by ContentsController#index as HTML
+  Rendering contents/index.html.haml within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendered shared/_header.html.haml (64.1ms)
+  [1m[36mContent Load (0.4ms)[0m  [1m[34mSELECT `contents`.* FROM `contents`[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[36mLike Load (0.3ms)[0m  [1m[34mSELECT  `likes`.* FROM `likes` WHERE `likes`.`content_id` = 1 AND `likes`.`user_id` = 1 LIMIT 1[0m
+  Rendered shared/_like.html.haml (77.6ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mLike Load (0.3ms)[0m  [1m[34mSELECT  `likes`.* FROM `likes` WHERE `likes`.`content_id` = 2 AND `likes`.`user_id` = 1 LIMIT 1[0m
+  Rendered shared/_like.html.haml (2.6ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mLike Load (0.3ms)[0m  [1m[34mSELECT  `likes`.* FROM `likes` WHERE `likes`.`content_id` = 3 AND `likes`.`user_id` = 1 LIMIT 1[0m
+  Rendered shared/_like.html.haml (5.3ms)
+  Rendered shared/_footer.html.haml (2.8ms)
+  Rendered contents/index.html.haml within layouts/application (193.3ms)
+Completed 200 OK in 569ms (Views: 469.3ms | ActiveRecord: 72.9ms)
+
+
+Started GET "/contents/1" for 127.0.0.1 at 2019-03-06 01:04:50 +0900
+Processing by ContentsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mContent Load (0.3ms)[0m  [1m[34mSELECT  `contents`.* FROM `contents` WHERE `contents`.`id` = 1 LIMIT 1[0m
+  Rendering contents/show.html.haml within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendered shared/_header.html.haml (10.7ms)
+  Rendered shared/_footer.html.haml (2.9ms)
+  Rendered contents/show.html.haml within layouts/application (19.2ms)
+Completed 200 OK in 66ms (Views: 60.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/contents/1" for 127.0.0.1 at 2019-03-06 01:04:52 +0900
+Processing by ContentsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mContent Load (7.0ms)[0m  [1m[34mSELECT  `contents`.* FROM `contents` WHERE `contents`.`id` = 1 LIMIT 1[0m
+  Rendering contents/show.html.haml within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendered shared/_header.html.haml (23.0ms)
+  Rendered shared/_footer.html.haml (5.5ms)
+  Rendered contents/show.html.haml within layouts/application (35.5ms)
+Completed 200 OK in 89ms (Views: 77.1ms | ActiveRecord: 7.3ms)
+
+
+Started POST "/contents/1/likes" for 127.0.0.1 at 2019-03-06 01:04:53 +0900
+Processing by LikesController#create as JS
+  Parameters: {"content_id"=>"1"}
+  [1m[36mContent Load (0.3ms)[0m  [1m[34mSELECT  `contents`.* FROM `contents` WHERE `contents`.`id` = 1 LIMIT 1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[36mContent Load (0.2ms)[0m  [1m[34mSELECT  `contents`.* FROM `contents` WHERE `contents`.`id` = 1 LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `likes` (`user_id`, `content_id`, `created_at`, `updated_at`) VALUES (1, 1, '2019-03-05 16:04:53', '2019-03-05 16:04:53')[0m
+  [1m[35mSQL (40.2ms)[0m  [1m[33mUPDATE `contents` SET `likes_count` = COALESCE(`likes_count`, 0) + 1 WHERE `contents`.`id` = 1[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mContent Load (0.4ms)[0m  [1m[34mSELECT  `contents`.* FROM `contents` WHERE `contents`.`id` = 1 LIMIT 1[0m
+  Rendering likes/create.js.erb
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[36mLike Load (0.2ms)[0m  [1m[34mSELECT  `likes`.* FROM `likes` WHERE `likes`.`content_id` = 1 AND `likes`.`user_id` = 1 LIMIT 1[0m
+  [1m[36mLike Load (0.2ms)[0m  [1m[34mSELECT `likes`.* FROM `likes` WHERE `likes`.`content_id` = 1[0m
+  Rendered shared/_like.html.haml (8.6ms)
+  Rendered likes/create.js.erb (26.0ms)
+Completed 200 OK in 129ms (Views: 51.4ms | ActiveRecord: 44.3ms)
+
+
+Started DELETE "/contents/1/likes/64" for 127.0.0.1 at 2019-03-06 01:04:55 +0900
+Processing by LikesController#destroy as JS
+  Parameters: {"content_id"=>"1", "id"=>"64"}
+  [1m[36mContent Load (0.3ms)[0m  [1m[34mSELECT  `contents`.* FROM `contents` WHERE `contents`.`id` = 1 LIMIT 1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mLike Load (0.2ms)[0m  [1m[34mSELECT  `likes`.* FROM `likes` WHERE `likes`.`user_id` = 1 AND `likes`.`content_id` = 1 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM `likes` WHERE `likes`.`id` = 64[0m
+  [1m[36mContent Load (0.2ms)[0m  [1m[34mSELECT  `contents`.* FROM `contents` WHERE `contents`.`id` = 1 LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[33mUPDATE `contents` SET `likes_count` = COALESCE(`likes_count`, 0) - 1 WHERE `contents`.`id` = 1[0m
+  [1m[35m (6.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mContent Load (0.3ms)[0m  [1m[34mSELECT  `contents`.* FROM `contents` WHERE `contents`.`id` = 1 LIMIT 1[0m
+  Rendering likes/destroy.js.erb
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[36mLike Load (0.2ms)[0m  [1m[34mSELECT  `likes`.* FROM `likes` WHERE `likes`.`content_id` = 1 AND `likes`.`user_id` = 1 LIMIT 1[0m
+  Rendered shared/_like.html.haml (7.4ms)
+  Rendered likes/destroy.js.erb (24.0ms)
+Completed 200 OK in 84ms (Views: 48.9ms | ActiveRecord: 8.3ms)
+
+
+Started GET "/contents/1" for 127.0.0.1 at 2019-03-06 01:05:03 +0900
+Processing by ContentsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mContent Load (3.1ms)[0m  [1m[34mSELECT  `contents`.* FROM `contents` WHERE `contents`.`id` = 1 LIMIT 1[0m
+  Rendering contents/show.html.haml within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendered shared/_header.html.haml (11.8ms)
+  Rendered shared/_footer.html.haml (12.2ms)
+  Rendered contents/show.html.haml within layouts/application (31.9ms)
+Completed 200 OK in 67ms (Views: 57.0ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-03-06 01:05:07 +0900
+Processing by ContentsController#index as HTML
+  Rendering contents/index.html.haml within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendered shared/_header.html.haml (21.3ms)
+  [1m[36mContent Load (0.3ms)[0m  [1m[34mSELECT `contents`.* FROM `contents`[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[36mLike Load (0.2ms)[0m  [1m[34mSELECT  `likes`.* FROM `likes` WHERE `likes`.`content_id` = 1 AND `likes`.`user_id` = 1 LIMIT 1[0m
+  Rendered shared/_like.html.haml (9.5ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mLike Load (0.2ms)[0m  [1m[34mSELECT  `likes`.* FROM `likes` WHERE `likes`.`content_id` = 2 AND `likes`.`user_id` = 1 LIMIT 1[0m
+  Rendered shared/_like.html.haml (2.0ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mLike Load (0.2ms)[0m  [1m[34mSELECT  `likes`.* FROM `likes` WHERE `likes`.`content_id` = 3 AND `likes`.`user_id` = 1 LIMIT 1[0m
+  Rendered shared/_like.html.haml (2.1ms)
+  Rendered shared/_footer.html.haml (2.4ms)
+  Rendered contents/index.html.haml within layouts/application (59.0ms)
+Completed 200 OK in 94ms (Views: 87.7ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/contents/new" for 127.0.0.1 at 2019-03-06 01:42:14 +0900
+Processing by ContentsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering contents/new.html.haml within layouts/application
+  Rendered shared/_header.html.haml (8.8ms)
+  Rendered shared/_footer.html.haml (2.8ms)
+  Rendered contents/new.html.haml within layouts/application (37.9ms)
+Completed 200 OK in 80ms (Views: 75.1ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/contents" for 127.0.0.1 at 2019-03-06 01:42:18 +0900
+Processing by ContentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Jsgm+rsQL8n9WInOkqYSewH1EbOc4sHgMCG7+ClP9cHszjqthDyNG2rQdrrzgXw7d28PvN38J1/elL7Sog1jyw==", "content"=>{"name"=>"dd", "text"=>""}, "commit"=>"OK"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `contents` (`name`, `text`, `created_at`, `updated_at`, `user_id`) VALUES ('dd', '', '2019-03-05 16:42:18', '2019-03-05 16:42:18', 1)[0m
+  [1m[35m (41.8ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 51ms (ActiveRecord: 42.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-03-06 01:42:18 +0900
+Processing by ContentsController#index as HTML
+  Rendering contents/index.html.haml within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendered shared/_header.html.haml (8.3ms)
+  [1m[36mContent Load (0.2ms)[0m  [1m[34mSELECT `contents`.* FROM `contents`[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[36mLike Load (0.2ms)[0m  [1m[34mSELECT  `likes`.* FROM `likes` WHERE `likes`.`content_id` = 1 AND `likes`.`user_id` = 1 LIMIT 1[0m
+  Rendered shared/_like.html.haml (8.4ms)
+  [1m[36mCACHE (0.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mLike Load (0.2ms)[0m  [1m[34mSELECT  `likes`.* FROM `likes` WHERE `likes`.`content_id` = 2 AND `likes`.`user_id` = 1 LIMIT 1[0m
+  Rendered shared/_like.html.haml (2.6ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mLike Load (0.2ms)[0m  [1m[34mSELECT  `likes`.* FROM `likes` WHERE `likes`.`content_id` = 3 AND `likes`.`user_id` = 1 LIMIT 1[0m
+  Rendered shared/_like.html.haml (2.5ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mLike Load (0.2ms)[0m  [1m[34mSELECT  `likes`.* FROM `likes` WHERE `likes`.`content_id` = 4 AND `likes`.`user_id` = 1 LIMIT 1[0m
+  Rendered shared/_like.html.haml (2.0ms)
+  Rendered shared/_footer.html.haml (2.9ms)
+  Rendered contents/index.html.haml within layouts/application (44.8ms)
+Completed 200 OK in 70ms (Views: 65.3ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-03-06 01:42:26 +0900
+Processing by ContentsController#index as HTML
+  Rendering contents/index.html.haml within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendered shared/_header.html.haml (9.4ms)
+  [1m[36mContent Load (0.2ms)[0m  [1m[34mSELECT `contents`.* FROM `contents`[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[36mLike Load (0.2ms)[0m  [1m[34mSELECT  `likes`.* FROM `likes` WHERE `likes`.`content_id` = 1 AND `likes`.`user_id` = 1 LIMIT 1[0m
+  Rendered shared/_like.html.haml (8.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mLike Load (0.3ms)[0m  [1m[34mSELECT  `likes`.* FROM `likes` WHERE `likes`.`content_id` = 2 AND `likes`.`user_id` = 1 LIMIT 1[0m
+  Rendered shared/_like.html.haml (3.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mLike Load (0.3ms)[0m  [1m[34mSELECT  `likes`.* FROM `likes` WHERE `likes`.`content_id` = 3 AND `likes`.`user_id` = 1 LIMIT 1[0m
+  Rendered shared/_like.html.haml (2.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mLike Load (0.2ms)[0m  [1m[34mSELECT  `likes`.* FROM `likes` WHERE `likes`.`content_id` = 4 AND `likes`.`user_id` = 1 LIMIT 1[0m
+  Rendered shared/_like.html.haml (2.3ms)
+  Rendered shared/_footer.html.haml (2.5ms)
+  Rendered contents/index.html.haml within layouts/application (44.0ms)
+Completed 200 OK in 74ms (Views: 68.7ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/contents/2" for 127.0.0.1 at 2019-03-06 01:42:29 +0900
+Processing by ContentsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mContent Load (0.3ms)[0m  [1m[34mSELECT  `contents`.* FROM `contents` WHERE `contents`.`id` = 2 LIMIT 1[0m
+  Rendering contents/show.html.haml within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendered shared/_header.html.haml (9.7ms)
+  Rendered shared/_footer.html.haml (2.5ms)
+  Rendered contents/show.html.haml within layouts/application (17.2ms)
+Completed 200 OK in 48ms (Views: 43.4ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/contents/4/likes" for 127.0.0.1 at 2019-03-06 01:42:34 +0900
+Processing by LikesController#create as JS
+  Parameters: {"content_id"=>"4"}
+  [1m[36mContent Load (0.3ms)[0m  [1m[34mSELECT  `contents`.* FROM `contents` WHERE `contents`.`id` = 4 LIMIT 1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[36mContent Load (0.2ms)[0m  [1m[34mSELECT  `contents`.* FROM `contents` WHERE `contents`.`id` = 4 LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `likes` (`user_id`, `content_id`, `created_at`, `updated_at`) VALUES (1, 4, '2019-03-05 16:42:34', '2019-03-05 16:42:34')[0m
+  [1m[35mSQL (4.8ms)[0m  [1m[33mUPDATE `contents` SET `likes_count` = COALESCE(`likes_count`, 0) + 1 WHERE `contents`.`id` = 4[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mContent Load (0.3ms)[0m  [1m[34mSELECT  `contents`.* FROM `contents` WHERE `contents`.`id` = 4 LIMIT 1[0m
+  Rendering likes/create.js.erb
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[36mLike Load (0.2ms)[0m  [1m[34mSELECT  `likes`.* FROM `likes` WHERE `likes`.`content_id` = 4 AND `likes`.`user_id` = 1 LIMIT 1[0m
+  [1m[36mLike Load (0.2ms)[0m  [1m[34mSELECT `likes`.* FROM `likes` WHERE `likes`.`content_id` = 4[0m
+  Rendered shared/_like.html.haml (7.1ms)
+  Rendered likes/create.js.erb (22.8ms)
+Completed 200 OK in 79ms (Views: 48.3ms | ActiveRecord: 7.8ms)
+
+
+Started DELETE "/contents/4/likes/65" for 127.0.0.1 at 2019-03-06 01:42:35 +0900
+Processing by LikesController#destroy as JS
+  Parameters: {"content_id"=>"4", "id"=>"65"}
+  [1m[36mContent Load (0.2ms)[0m  [1m[34mSELECT  `contents`.* FROM `contents` WHERE `contents`.`id` = 4 LIMIT 1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mLike Load (0.2ms)[0m  [1m[34mSELECT  `likes`.* FROM `likes` WHERE `likes`.`user_id` = 1 AND `likes`.`content_id` = 4 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM `likes` WHERE `likes`.`id` = 65[0m
+  [1m[36mContent Load (0.2ms)[0m  [1m[34mSELECT  `contents`.* FROM `contents` WHERE `contents`.`id` = 4 LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[33mUPDATE `contents` SET `likes_count` = COALESCE(`likes_count`, 0) - 1 WHERE `contents`.`id` = 4[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mContent Load (0.3ms)[0m  [1m[34mSELECT  `contents`.* FROM `contents` WHERE `contents`.`id` = 4 LIMIT 1[0m
+  Rendering likes/destroy.js.erb
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[36mLike Load (0.2ms)[0m  [1m[34mSELECT  `likes`.* FROM `likes` WHERE `likes`.`content_id` = 4 AND `likes`.`user_id` = 1 LIMIT 1[0m
+  Rendered shared/_like.html.haml (5.9ms)
+  Rendered likes/destroy.js.erb (21.7ms)
+Completed 200 OK in 72ms (Views: 47.7ms | ActiveRecord: 2.4ms)
+
+
+Started POST "/contents/3/likes" for 127.0.0.1 at 2019-03-06 01:42:36 +0900
+Processing by LikesController#create as JS
+  Parameters: {"content_id"=>"3"}
+  [1m[36mContent Load (0.5ms)[0m  [1m[34mSELECT  `contents`.* FROM `contents` WHERE `contents`.`id` = 3 LIMIT 1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[36mContent Load (0.3ms)[0m  [1m[34mSELECT  `contents`.* FROM `contents` WHERE `contents`.`id` = 3 LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `likes` (`user_id`, `content_id`, `created_at`, `updated_at`) VALUES (1, 3, '2019-03-05 16:42:36', '2019-03-05 16:42:36')[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[33mUPDATE `contents` SET `likes_count` = COALESCE(`likes_count`, 0) + 1 WHERE `contents`.`id` = 3[0m
+  [1m[35m (5.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mContent Load (0.3ms)[0m  [1m[34mSELECT  `contents`.* FROM `contents` WHERE `contents`.`id` = 3 LIMIT 1[0m
+  Rendering likes/create.js.erb
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[36mLike Load (0.2ms)[0m  [1m[34mSELECT  `likes`.* FROM `likes` WHERE `likes`.`content_id` = 3 AND `likes`.`user_id` = 1 LIMIT 1[0m
+  [1m[36mLike Load (0.2ms)[0m  [1m[34mSELECT `likes`.* FROM `likes` WHERE `likes`.`content_id` = 3[0m
+  Rendered shared/_like.html.haml (7.9ms)
+  Rendered likes/create.js.erb (23.6ms)
+Completed 200 OK in 83ms (Views: 48.0ms | ActiveRecord: 8.3ms)
+
+
+Started DELETE "/contents/3/likes/66" for 127.0.0.1 at 2019-03-06 01:42:37 +0900
+Processing by LikesController#destroy as JS
+  Parameters: {"content_id"=>"3", "id"=>"66"}
+  [1m[36mContent Load (0.3ms)[0m  [1m[34mSELECT  `contents`.* FROM `contents` WHERE `contents`.`id` = 3 LIMIT 1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mLike Load (0.2ms)[0m  [1m[34mSELECT  `likes`.* FROM `likes` WHERE `likes`.`user_id` = 1 AND `likes`.`content_id` = 3 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM `likes` WHERE `likes`.`id` = 66[0m
+  [1m[36mContent Load (0.2ms)[0m  [1m[34mSELECT  `contents`.* FROM `contents` WHERE `contents`.`id` = 3 LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE `contents` SET `likes_count` = COALESCE(`likes_count`, 0) - 1 WHERE `contents`.`id` = 3[0m
+  [1m[35m (5.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mContent Load (0.3ms)[0m  [1m[34mSELECT  `contents`.* FROM `contents` WHERE `contents`.`id` = 3 LIMIT 1[0m
+  Rendering likes/destroy.js.erb
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[36mLike Load (0.2ms)[0m  [1m[34mSELECT  `likes`.* FROM `likes` WHERE `likes`.`content_id` = 3 AND `likes`.`user_id` = 1 LIMIT 1[0m
+  Rendered shared/_like.html.haml (6.5ms)
+  Rendered likes/destroy.js.erb (22.3ms)
+Completed 200 OK in 81ms (Views: 47.1ms | ActiveRecord: 7.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-03-06 01:45:38 +0900
+Processing by ContentsController#index as HTML
+  Rendering contents/index.html.haml within layouts/application
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendered shared/_header.html.haml (37.7ms)
+  [1m[36mContent Load (0.3ms)[0m  [1m[34mSELECT `contents`.* FROM `contents`[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[36mLike Load (0.3ms)[0m  [1m[34mSELECT  `likes`.* FROM `likes` WHERE `likes`.`content_id` = 1 AND `likes`.`user_id` = 1 LIMIT 1[0m
+  Rendered shared/_like.html.haml (7.3ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mLike Load (0.3ms)[0m  [1m[34mSELECT  `likes`.* FROM `likes` WHERE `likes`.`content_id` = 2 AND `likes`.`user_id` = 1 LIMIT 1[0m
+  Rendered shared/_like.html.haml (8.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mLike Load (0.3ms)[0m  [1m[34mSELECT  `likes`.* FROM `likes` WHERE `likes`.`content_id` = 3 AND `likes`.`user_id` = 1 LIMIT 1[0m
+  Rendered shared/_like.html.haml (6.2ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mLike Load (0.6ms)[0m  [1m[34mSELECT  `likes`.* FROM `likes` WHERE `likes`.`content_id` = 4 AND `likes`.`user_id` = 1 LIMIT 1[0m
+  Rendered shared/_like.html.haml (6.2ms)
+  Rendered shared/_footer.html.haml (4.0ms)
+  Rendered contents/index.html.haml within layouts/application (105.9ms)
+Completed 200 OK in 152ms (Views: 145.2ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-03-06 01:45:39 +0900
+Processing by ContentsController#index as HTML
+  Rendering contents/index.html.haml within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendered shared/_header.html.haml (23.7ms)
+  [1m[36mContent Load (0.3ms)[0m  [1m[34mSELECT `contents`.* FROM `contents`[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[36mLike Load (0.2ms)[0m  [1m[34mSELECT  `likes`.* FROM `likes` WHERE `likes`.`content_id` = 1 AND `likes`.`user_id` = 1 LIMIT 1[0m
+  Rendered shared/_like.html.haml (6.7ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mLike Load (0.3ms)[0m  [1m[34mSELECT  `likes`.* FROM `likes` WHERE `likes`.`content_id` = 2 AND `likes`.`user_id` = 1 LIMIT 1[0m
+  Rendered shared/_like.html.haml (4.4ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mLike Load (0.2ms)[0m  [1m[34mSELECT  `likes`.* FROM `likes` WHERE `likes`.`content_id` = 3 AND `likes`.`user_id` = 1 LIMIT 1[0m
+  Rendered shared/_like.html.haml (2.0ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mLike Load (0.2ms)[0m  [1m[34mSELECT  `likes`.* FROM `likes` WHERE `likes`.`content_id` = 4 AND `likes`.`user_id` = 1 LIMIT 1[0m
+  Rendered shared/_like.html.haml (2.4ms)
+  Rendered shared/_footer.html.haml (2.6ms)
+  Rendered contents/index.html.haml within layouts/application (62.1ms)
+Completed 200 OK in 96ms (Views: 90.1ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/contents/1" for 127.0.0.1 at 2019-03-06 01:45:40 +0900
+Processing by ContentsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mContent Load (0.6ms)[0m  [1m[34mSELECT  `contents`.* FROM `contents` WHERE `contents`.`id` = 1 LIMIT 1[0m
+  Rendering contents/show.html.haml within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendered shared/_header.html.haml (12.2ms)
+  Rendered shared/_footer.html.haml (5.3ms)
+  Rendered contents/show.html.haml within layouts/application (24.5ms)
+Completed 200 OK in 56ms (Views: 50.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/contents/1" for 127.0.0.1 at 2019-03-06 02:03:54 +0900
+Processing by ContentsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mContent Load (0.3ms)[0m  [1m[34mSELECT  `contents`.* FROM `contents` WHERE `contents`.`id` = 1 LIMIT 1[0m
+  Rendering contents/show.html.haml within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendered shared/_header.html.haml (31.0ms)
+  Rendered shared/_footer.html.haml (8.9ms)
+  Rendered contents/show.html.haml within layouts/application (52.2ms)
+Completed 200 OK in 148ms (Views: 143.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-03-06 02:03:56 +0900
+Processing by ContentsController#index as HTML
+  Rendering contents/index.html.haml within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendered shared/_header.html.haml (21.4ms)
+  [1m[36mContent Load (0.2ms)[0m  [1m[34mSELECT `contents`.* FROM `contents`[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[36mLike Load (0.2ms)[0m  [1m[34mSELECT  `likes`.* FROM `likes` WHERE `likes`.`content_id` = 1 AND `likes`.`user_id` = 1 LIMIT 1[0m
+  Rendered shared/_like.html.haml (11.6ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mLike Load (0.3ms)[0m  [1m[34mSELECT  `likes`.* FROM `likes` WHERE `likes`.`content_id` = 2 AND `likes`.`user_id` = 1 LIMIT 1[0m
+  Rendered shared/_like.html.haml (2.9ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mLike Load (0.2ms)[0m  [1m[34mSELECT  `likes`.* FROM `likes` WHERE `likes`.`content_id` = 3 AND `likes`.`user_id` = 1 LIMIT 1[0m
+  Rendered shared/_like.html.haml (2.8ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mLike Load (0.2ms)[0m  [1m[34mSELECT  `likes`.* FROM `likes` WHERE `likes`.`content_id` = 4 AND `likes`.`user_id` = 1 LIMIT 1[0m
+  Rendered shared/_like.html.haml (2.9ms)
+  Rendered shared/_footer.html.haml (4.7ms)
+  Rendered contents/index.html.haml within layouts/application (77.5ms)
+Completed 200 OK in 124ms (Views: 116.6ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/contents/1" for 127.0.0.1 at 2019-03-06 02:03:59 +0900
+Processing by ContentsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mContent Load (3.6ms)[0m  [1m[34mSELECT  `contents`.* FROM `contents` WHERE `contents`.`id` = 1 LIMIT 1[0m
+  Rendering contents/show.html.haml within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendered shared/_header.html.haml (12.2ms)
+  Rendered shared/_footer.html.haml (3.0ms)
+  Rendered contents/show.html.haml within layouts/application (23.0ms)
+Completed 200 OK in 61ms (Views: 52.3ms | ActiveRecord: 3.9ms)
+
+
