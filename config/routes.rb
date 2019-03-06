@@ -11,10 +11,11 @@ Rails.application.routes.draw do
       get :search
     end
 
-    resources :likes, only: [:create, :destroy]
+    resources :likes, only: %i(create destroy)
 
   end
 
+  resources :likes, only: %i(show)
   resources :users, only: %i(index show)
 
 end

@@ -1,6 +1,12 @@
 class LikesController < ApplicationController
 
-  before_action :set_content
+  before_action :set_content, only: [:create, :destroy]
+
+  def show
+    @user_likes =Like.where(user_id: current_user.id)
+    @likes = @user_likes.pluck(:content_id)
+    @like_contents =Content.where(id: @likes)
+  end
 
   def create
     @like = Like.new(user_id: current_user.id, content_id: params[:content_id])
@@ -15,6 +21,8 @@ class LikesController < ApplicationController
     @likes = Like.where(content_id: params[:content_id])
     @content.reload
   end
+
+  private
 
   def set_content
     @content = Content.find(params[:content_id])
