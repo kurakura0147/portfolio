@@ -18,8 +18,8 @@
             = content.created_at.strftime("%Y/%m/%d %H:%M")
 
   .main-content__right
-    Favorite article
-    - @contents.each do |content|
+    いいね  RANKING
+    - @ranking_contents.each do |content|
       .favorite__list
         .favorite__list--image
           = image_tag content.image
