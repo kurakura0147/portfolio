@@ -16,9 +16,9 @@
                 .i.far.fa-edit
                 記事の投稿
             %li.child
-              = link_to "" do
+              = link_to like_path(id: current_user.id) do
                 .i.far.fa-thumbs-up
-                お気に入りの確認
+                いいね記事の確認
             %li.child
               = link_to user_path(id: current_user.id) do
                 .i.far.fa-eye

@@ -1,26 +1,24 @@
 - if user_signed_in?
-  - unless content.like_user(current_user.id).blank?
-    = link_to content_like_path(content_id: content.id ,id: content.likes[0].id), method: :delete, remote: true do
+  / ログイン中の時
+
+  - if Like.find_by(user_id: current_user.id, content_id: content.id)
+    / いいねを押している時
+    = link_to content_like_path(content_id: content.id ,id: content.id), method: :delete, remote: true do
       .vertical_like
         %i.fas.fa-heart
         %span.red-text
           = content.likes_count
   - else
-    / いいねしてない時
+    / いいねを押していない時
     = link_to content_likes_path(content_id: content.id), method: :post, remote: true do
       .vertical_like
         %i.far.fa-heart
         %span.red-text
           = content.likes_count
+
 - else
   / ログインしてない時
-  - if content.likes_count > 0
-    .vertical_like
-      %i.far.fa-heart
-      %span.red-text
-        = content.likes_count
-  - else
-    .vertical_like
-      %i.far.fa-heart
-      %span.red-text
-        = content.likes_count
+  .vertical_like
+    %i.far.fa-heart
+    %span.red-text
+      = content.likes_count

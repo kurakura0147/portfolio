@@ -5,6 +5,7 @@ class ContentsController < ApplicationController
 
   def index
     @contents = Content.all
+    @ranking_contents = Content.order("likes_count DESC")
   end
 
   def new
