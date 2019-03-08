@@ -21,7 +21,7 @@
   %br
   = "投稿者 : #{@contents.user.nickname}"
   %br
-  = link_to "投稿者 : #{@contents.user.nickname}さんの記事一覧を見る", user_path(params[:id])
+  = link_to "投稿者 : #{@contents.user.nickname}さんの記事一覧を見る", user_path(id: @contents.user_id), name: "params_content"
 - if user_signed_in?
   - if @contents.user_id == current_user.id
 
