@@ -6,6 +6,7 @@ class UsersController < ApplicationController
 
 #投稿記事一覧 user_path
   def show
+    @article_user = User.find(params[:id])
     @contents = Content.where(user_id: params[:id])
   end
 
