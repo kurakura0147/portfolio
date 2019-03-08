@@ -20,7 +20,7 @@
                 .i.far.fa-thumbs-up
                 いいね記事の確認
             %li.child
-              = link_to user_path(id: current_user.id) do
+              = link_to user_path(id: current_user.id), name: "params_user" do
                 .i.far.fa-eye
                 投稿した記事の確認
         -else
