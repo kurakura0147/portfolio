@@ -19,13 +19,16 @@
   tag:
   = @contents.tag_list
   %br
+  = "投稿者 : #{@contents.user.nickname}"
+  %br
+  = link_to "投稿者 : #{@contents.user.nickname}さんの記事一覧を見る", user_path(params[:id])
+- if user_signed_in?
+  - if @contents.user_id == current_user.id
 
-- if @contents.user_id == current_user.id
+    = link_to edit_content_path do
+      編集画面に
 
-  = link_to edit_content_path do
-    編集画面に
-
-  = link_to content_path, method: :delete, data: {confirm: "本当に削除しますか？"} do
-    削除をする
+    = link_to content_path, method: :delete, data: {confirm: "本当に削除しますか？"} do
+      削除をする
 
 = render 'shared/footer'
