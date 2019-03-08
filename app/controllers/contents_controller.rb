@@ -4,7 +4,7 @@ class ContentsController < ApplicationController
   before_action :find_contents, only: [:show, :edit, :update, :destroy]
 
   def index
-    @contents = Content.all
+    @contents = Content.all.order("id DESC")
     @ranking_contents = Content.order("likes_count DESC")
   end
 
