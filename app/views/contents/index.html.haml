@@ -10,6 +10,8 @@
             .i.far.fa-clipboard
             = content.name
           .article__text
+            tag :
+            = content.tag_list
           %object
             .article__iine{:id => "likes_buttons_#{content.id}"}
               = render partial: 'shared/like', locals: { content: content, likes: @likes}
