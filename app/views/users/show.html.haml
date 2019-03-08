@@ -23,8 +23,16 @@
             = content.created_at.strftime("%Y/%m/%d %H:%M")
 
   .main-content__right
-    いいね順
-    - @contents.each do |content|
+    = "#{@article_user.nickname}さんの記事"
+    %br
+    .i.fas.fa-chess-king
+    ="いいねRANKING"
+    .i.fas.fa-chess-king
+    %br
+    - i = 1
+    - @ranking_contents.first(5).each do |content|
+      = i
+      - i += 1
       .favorite__list
         .favorite__list--image
           = image_tag content.image
