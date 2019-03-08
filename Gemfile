@@ -68,3 +68,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
   gem 'devise'
   gem 'carrierwave'
   gem 'fog-aws'
+  gem 'acts-as-taggable-on'

@@ -1,14 +1,31 @@
 = render 'shared/header'
 
-= image_tag @contents.image
-= @contents.name
-= @contents.text
-= @contents.created_at.strftime("%Y/%m/%d %H:%M")
+= image_tag @contents.image, class: "article__image"
+.article__list
+  .article__title
+    .i.far.fa-clipboard
+    %br
+    name:
+    = @contents.name
+    %br
+  .article__text
+    text:
+    = @contents.text
+  %br
+  .i.far.fa-clock
+  time:
+  = @contents.created_at.strftime("%Y/%m/%d %H:%M")
+  %br
+  tag:
+  = @contents.tag_list
+  %br
 
-= link_to edit_content_path do
-  編集画面に
+- if @contents.user_id == current_user.id
 
-= link_to content_path, method: :delete, data: {confirm: "本当に削除しますか？"} do
-  削除をする
+  = link_to edit_content_path do
+    編集画面に
+
+  = link_to content_path, method: :delete, data: {confirm: "本当に削除しますか？"} do
+    削除をする
 
 = render 'shared/footer'
