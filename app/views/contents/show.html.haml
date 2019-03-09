@@ -11,13 +11,16 @@
   .article__text
     text:
     = @contents.text
+  .article__taglist
+    - @uu = ActsAsTaggableOn::Tagging.where(taggable_id: @contents.id)
+    - @uu.each do |num|
+      - num.tag_id
+      %li.article__taglist--tag
+        .tag
+          = ActsAsTaggableOn::Tag.find(num.tag_id).name
   %br
   .i.far.fa-clock
-  time:
   = @contents.created_at.strftime("%Y/%m/%d %H:%M")
-  %br
-  tag:
-  = @contents.tag_list
   %br
   = "投稿者 : #{@contents.user.nickname}"
   %br
