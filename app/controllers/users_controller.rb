@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
 
+  before_action :set_tags
+
 #ユーザー情報詳細 users_path
   def index
   end
@@ -25,6 +27,10 @@ private
 
   def find_contents(params_id)
     Content.where(user_id: params_id)
+  end
+
+  def set_tags
+    @tags = ActsAsTaggableOn::Tag.all
   end
 
 end

@@ -2,10 +2,13 @@ class ContentsController < ApplicationController
 
   before_action :authenticate_user!, except: [:index, :show, :search, :mypage ]
   before_action :find_contents, only: [:show, :edit, :update, :destroy]
+  before_action :set_tags
 
   def index
     @contents = Content.all.order("id DESC").page(params[:page]).per(6)
     @ranking_contents = Content.order("likes_count DESC")
+
+
   end
 
   def new
@@ -50,6 +53,10 @@ class ContentsController < ApplicationController
 
   def find_contents
     @contents = Content.find(params[:id])
+  end
+
+  def set_tags
+    @tags = ActsAsTaggableOn::Tag.order("taggings_count DESC").limit(40)
   end
 
 end
