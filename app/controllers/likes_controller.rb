@@ -5,7 +5,7 @@ class LikesController < ApplicationController
   def show
     @user_likes =Like.where(user_id: current_user.id)
     @likes = @user_likes.pluck(:content_id)
-    @like_contents =Content.where(id: @likes)
+    @like_contents =Content.where(id: @likes).page(params[:page]).per(6)
   end
 
   def create
