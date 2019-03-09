@@ -1,20 +1,21 @@
 = image_tag content.image , class: "article__image"
 .article__list
   .article__title
-    .i.far.fa-clipboard
+    .i.far.fa-clipboard &nbsp;
     = content.name
+    %object
+      .article__iine{:id => "likes_buttons_#{content.id}"}
+        = render partial: 'shared/like', locals: { content: content, likes: @likes}
   .article__text
-    = "テキスト:#{content.text}"
+    .i.fas.fa-arrow-right
+    = content.text
   .article__taglist
-    - @uu = ActsAsTaggableOn::Tagging.where(taggable_id: content.id)
-    - @uu.each do |num|
+    - @find_tag = ActsAsTaggableOn::Tagging.where(taggable_id: content.id)
+    - @find_tag.each do |num|
       - num.tag_id
       %li.article__taglist--tag
         .tag
           = ActsAsTaggableOn::Tag.find(num.tag_id).name
-  %object
-    .article__iine{:id => "likes_buttons_#{content.id}"}
-      = render partial: 'shared/like', locals: { content: content, likes: @likes}
   .article__time
     = "投稿者 : #{content.user.nickname}"
     %br

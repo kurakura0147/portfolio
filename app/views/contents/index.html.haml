@@ -7,17 +7,11 @@
         = render partial: 'shared/article', locals: { content: content}
 
   .main-content__right
-    .i.fas.fa-chess-king
-    いいね  RANKING
-    .i.fas.fa-chess-king
-    %br
-    - i = 1
-    - @ranking_contents.first(5).each do |content|
-      = i
-      - i += 1
-      .favorite__list
-        .favorite__list--image
-          = image_tag content.image
-        .favorite__list--name
-          = content.name
+    .main-content__right--ranking
+      .i.fas.fa-chess-king
+      いいね  RANKING
+      .i.fas.fa-chess-king
+      %br
+    = render partial: 'shared/ranking-article'
+
 = render 'shared/footer'
