@@ -4,18 +4,9 @@
   .main-content__left
     .main-content__left--search
       = "該当 #{@count} 件 ( ' #{params[:search]} ' による検索 )"
-
     - @contents.each do |content|
       =link_to  content_path(content) ,class: "main-content__left--article" do
-        = image_tag content.image , class: "article__image"
-        .article__list
-          .article__title
-            .i.far.fa-clipboard
-            = content.name
-          .article__text
-          .article__time
-            .i.far.fa-clock
-            = content.created_at.strftime("%Y/%m/%d %H:%M")
+        = render partial: 'shared/article', locals: { content: content}
 
   .main-content__right
     Favorite article

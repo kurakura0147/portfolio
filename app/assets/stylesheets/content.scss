@@ -142,6 +142,23 @@ ul.child-search{
   &__text {
     color: black;
   }
+  &__taglist {
+    color: black;
+    margin-top: 3px;
+    &--tag {
+      display: inline-block;
+      font-size: 100%;
+      background-color: #3399FF;
+      border-radius: 20%;
+      padding: 4px;
+      .tag {
+      border-radius: 20%;
+      border:dotted 2px white;
+      padding: 2px 4px;
+      color: white;
+      }
+    }
+  }
   &__iine {
     position: absolute;
     bottom: 10px;
