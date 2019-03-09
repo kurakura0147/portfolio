@@ -10,8 +10,8 @@
     .i.fas.fa-arrow-right
     = content.text
   .article__taglist
-    - @uu = ActsAsTaggableOn::Tagging.where(taggable_id: content.id)
-    - @uu.each do |num|
+    - @find_tag = ActsAsTaggableOn::Tagging.where(taggable_id: content.id)
+    - @find_tag.each do |num|
       - num.tag_id
       %li.article__taglist--tag
         .tag
