@@ -113,6 +113,10 @@ ul.child-search{
       border: 1px solid #D4D4D4;
       text-decoration: none;
     }
+    &--user {
+      padding:20px 20px 0;
+      font-size: 18px;
+    }
     &--search {
       padding: 20px;
     }
@@ -122,6 +126,10 @@ ul.child-search{
     height: 100%;
     padding: 20px;
     background-color: white;
+    text-align: center;
+    &--ranking {
+      font-size: 18px;
+    }
   }
 }
 
