@@ -9,12 +9,12 @@ class UsersController < ApplicationController
 
   if params[:params_content]
     @find_user = Content.find(params[:id]).user_id
-    @contents = find_contents(@find_user).order("id DESC")
+    @contents = find_contents(@find_user).order("id DESC").page(params[:page]).per(6)
     @article_user = User.find(@find_user)
     @ranking_contents = find_contents(@find_user).order("likes_count DESC")
   else
     # params_user の場合
-    @contents = find_contents(params[:id]).order("id DESC")
+    @contents = find_contents(params[:id]).order("id DESC").page(params[:page]).per(6)
     @article_user = User.find(params[:id])
     @ranking_contents = find_contents(params[:id]).order("likes_count DESC")
   end

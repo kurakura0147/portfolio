@@ -4,7 +4,7 @@ class ContentsController < ApplicationController
   before_action :find_contents, only: [:show, :edit, :update, :destroy]
 
   def index
-    @contents = Content.all.order("id DESC")
+    @contents = Content.all.order("id DESC").page(params[:page]).per(6)
     @ranking_contents = Content.order("likes_count DESC")
   end
 
@@ -38,7 +38,7 @@ class ContentsController < ApplicationController
   end
 
   def search
-      @contents = Content.where('name LIKE(?)', "%#{params[:search]}%")
+      @contents = Content.where('name LIKE(?)', "%#{params[:search]}%").page(params[:page]).per(6)
       @count = @contents.count
   end
 
