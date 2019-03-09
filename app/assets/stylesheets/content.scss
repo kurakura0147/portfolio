@@ -140,13 +140,15 @@ ul.child-search{
   &__title {
     color:black;
     font-size: 22px;
+    display: flex;
   }
   &__text {
     color: black;
   }
   &__taglist {
     color: black;
-    margin-top: 3px;
+    position: absolute;
+    bottom: 20px;
     &--tag {
       display: inline-block;
       font-size: 100%;
@@ -164,7 +166,9 @@ ul.child-search{
   }
   &__iine {
     position: absolute;
-    bottom: 10px;
+    right: 20px;
+    // position: absolute;
+    // bottom: 10px;
     a {
       text-decoration: none;
     }
