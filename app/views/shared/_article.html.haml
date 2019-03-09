@@ -15,7 +15,7 @@
       - num.tag_id
       %li.article__taglist--tag
         .tag
-          = ActsAsTaggableOn::Tag.find(num.tag_id).name
+          = "# #{ActsAsTaggableOn::Tag.find(num.tag_id).name}"
   .article__time
     = "投稿者 : #{content.user.nickname}"
     %br

@@ -1,3 +1,9 @@
+.main-slide {
+  height: 220px;
+  background-color: #f5f5f5;
+  padding: 40px 180px;
+  text-align: center;
+}
 .main-content {
   padding: 40px 180px;
   display: flex;
@@ -36,12 +42,11 @@
     background-color: #f5f5f5;
     .pagination {
       font-weight: bold;
-
       & a {
         color: white;
         text-decoration: none;
         background-color: black;
-        padding: 10px 20px;
+        padding: 8px;
         border-radius: 20%;
         margin-left: 8px;
         &:hover {
@@ -71,6 +76,7 @@
   }
   &__text {
     color: black;
+    margin-top: 10px;
   }
   &__taglist {
     color: black;
@@ -79,12 +85,11 @@
     &--tag {
       display: inline-block;
       font-size: 100%;
-      background-color: #3399FF;
+      background-color: black;
       border-radius: 20%;
       padding: 4px;
       .tag {
       border-radius: 20%;
-      border:dotted 2px white;
       padding: 2px 4px;
       color: white;
       font-size: 12px;

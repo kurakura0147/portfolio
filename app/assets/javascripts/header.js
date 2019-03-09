@@ -11,9 +11,9 @@ $(document).on('turbolinks:load', function() {
     //検索機能のドロップダウン
     $(function(){
         $('.down-menu').hover(function(){
-            $("ul:not(:animated)", this).slideDown();
+            $("div:not(:animated)", this).slideDown();
         }, function(){
-            $("ul.child-search",this).slideUp();
+            $(".child-search",this).slideUp();
         });
     });
 
