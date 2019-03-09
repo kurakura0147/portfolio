@@ -11,16 +11,16 @@
           .i.fas.fa-bars
           %ul.child
             %li.child-hidden
-            %li.child
-              = link_to new_content_path do
+            = link_to new_content_path do
+              %li.child
                 .i.far.fa-edit
                 記事の投稿
-            %li.child
-              = link_to like_path(id: current_user.id) do
+            = link_to like_path(id: current_user.id) do
+              %li.child
                 .i.far.fa-thumbs-up
                 いいね記事の確認
-            %li.child
-              = link_to user_path(id: current_user.id), name: "params_user" do
+            = link_to user_path(id: current_user.id), name: "params_user" do
+              %li.child
                 .i.far.fa-eye
                 投稿した記事の確認
         -else
@@ -30,21 +30,21 @@
         %ul.child
           %li.child-hidden
           - if user_signed_in?
-            %li.child
-              = link_to new_user_registration_path do
+            = link_to new_user_registration_path do
+              %li.child
                 .i.fas.fa-user-edit
                 ユーザー情報
-            %li.child
-              = link_to destroy_user_session_path , method: "delete" do
+            = link_to destroy_user_session_path , method: "delete" do
+              %li.child
                 .i.fas.fa-sign-out-alt
                 ログアウト
           - else
-            %li.child
-              = link_to new_user_registration_path do
+            = link_to new_user_registration_path do
+              %li.child
                 .i.fas.fa-user-plus
                 ユーザー登録
-            %li.child
-              = link_to user_session_path do
+            = link_to user_session_path do
+              %li.child
                 .i.fas.fa-sign-in-alt
                 ログイン
     .header__right--search
