@@ -2,23 +2,11 @@
 
 .main-content
   .main-content__left
-    .main-content__left--search
-      = "いいねした記事一覧"
+    .main-content__left--user
+      = "#{current_user.nickname}さんがいいねした記事一覧"
     - @like_contents.each do |content|
       =link_to  content_path(content) ,class: "main-content__left--article" do
-        = image_tag content.image , class: "article__image"
-        .article__list
-          .article__title
-            .i.far.fa-clipboard
-            = content.name
-          .article__text
-            = content.text
-          %object
-            .article__iine{:id => "likes_buttons_#{content.id}"}
-              = render partial: 'shared/like', locals: { content: content, likes: @likes}
-          .article__time
-            .i.far.fa-clock
-            = content.created_at.strftime("%Y/%m/%d %H:%M")
+        = render partial: 'shared/article', locals: { content: content}
 
   .main-content__right
     Favorite article
