@@ -7,8 +7,6 @@ class ContentsController < ApplicationController
   def index
     @contents = Content.all.order("id DESC").page(params[:page]).per(6)
     @ranking_contents = Content.order("likes_count DESC")
-
-
   end
 
   def new
@@ -56,7 +54,7 @@ class ContentsController < ApplicationController
   end
 
   def set_tags
-    @tags = ActsAsTaggableOn::Tag.order("taggings_count DESC").limit(40)
+    @tags = ActsAsTaggableOn::Tag.order("taggings_count DESC").limit(20)
   end
 
 end
