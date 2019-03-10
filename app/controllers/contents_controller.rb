@@ -14,8 +14,7 @@ class ContentsController < ApplicationController
   end
 
   def create
-    @contents = Content.new(params_content)
-    @contents.save!
+    @contents = Content.create(params_content)
     redirect_to root_path
   end
 
@@ -39,8 +38,16 @@ class ContentsController < ApplicationController
   end
 
   def search
+    if params[:params_name]
       @contents = Content.where('name LIKE(?)', "%#{params[:search]}%").page(params[:page]).per(6)
+    else
+      @search_tag = ActsAsTaggableOn::Tag.find_by(name: params[:search]).id
+      @search_content = ActsAsTaggableOn::Tagging.where(tag_id: @search_tag).pluck(:taggable_id)
+      @contents = Content.where(id: @search_content).page(params[:page]).per(6)
+    end
+
       @count = @contents.count
+
   end
 
   private
@@ -54,7 +61,7 @@ class ContentsController < ApplicationController
   end
 
   def set_tags
-    @tags = ActsAsTaggableOn::Tag.order("taggings_count DESC").limit(20)
+    @tags = ActsAsTaggableOn::Tag.most_used(20)
   end
 
 end

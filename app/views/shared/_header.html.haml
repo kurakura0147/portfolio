@@ -56,12 +56,12 @@
             タイトル入力で検索 (あいまい検索)
             = form_tag( search_contents_path, :method => 'get' ) do
               = text_field_tag :search
-              = button_tag "search"
+              = button_tag "search", name: "params_name"
           .child-search
             タグ選択で検索(多い順に20表示)
             %br
             .child-search__taglist
             - @tags.each do |tag|
-              = link_to search_contents_path(tag.name), class: "child-search__taglist--tag" do
+              = link_to search_contents_path(search: tag.name), class: "child-search__taglist--tag" do
                 .tag
                   = "# #{tag.name}"
