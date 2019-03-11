@@ -1,3 +1,5 @@
+@import "./modules/color";
+
 .footer {
   color: white;
   padding: 0 180px;
@@ -19,9 +21,8 @@
         margin: 0 20px;
       }
       &-text {
-        text-decoration: none;
+        @include link_white;
         font-size: 18px;
-        color: white;
         margin-right:20px;
       }
     }

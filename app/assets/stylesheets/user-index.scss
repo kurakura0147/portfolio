@@ -1,3 +1,4 @@
+@import "./modules/color";
 
 .user_content {
   position: relative;
@@ -5,7 +6,6 @@
   height: calc(100% - 600px);
   width: calc(100% - 600px);
   h2 {
-
     font-size: 30px;
     font-weight: bold;
   }
@@ -19,10 +19,9 @@
     width: 400px;
   }
   &-form {
-    background-color: black;
+    @include tag-box;
     color: white;
     padding: 40px;
-    border-radius: 40px;
     position: relative;
     margin: auto;
     width: 340px;
@@ -44,25 +43,21 @@
   right: 400px;
   line-height: 60px;
   &__devise {
+    @include tag-box;
     margin-left:40px;
-    background-color: black;
-    border-radius: 30%;
     width: 80px;
     text-align: center;
     a {
-      text-decoration: none;
+      @include link_white;
       font-weight: bold;
-      color: white;
     }
   }
 }
 
 #user_submit {
+  @include tag-box;
+  @include link_white;
   margin-left:40px;
-  color: white;
-  background-color: black;
-  border-radius: 30%;
   padding: 10px;
-  text-decoration: none;
   font-weight: bold;
 }

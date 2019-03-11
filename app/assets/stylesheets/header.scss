@@ -1,6 +1,8 @@
+@import "./modules/color";
+
 .header {
   padding: 0 180px;
-  background-color: #f5f5f5;
+  background-color: $base-color;
   display: flex;
   min-height: 60px;
   justify-content: space-between;
@@ -15,26 +17,19 @@
   &__right {
     display: flex;
     &--sns {
-      margin-right: 40px;
-      font-size: 25px;
-      color: #9B9B9B;
+      @include icon-box;
     }
     &--menu {
-      margin-right: 40px;
-      font-size: 25px;
-      color: #9B9B9B;
+      @include icon-box;
     }
     &--account {
-      margin-right: 40px;
-      font-size: 25px;
-      color: #9B9B9B;
+      @include icon-box;
     }
     &--search {
-      margin-right: 40px;
-      font-size: 20px;
+      @include icon-box;
       padding: 0 10px;
-      border-right: 1px solid #D4D4D4;
-      border-left: 1px solid #D4D4D4;
+      border-right: 1px solid $border-color;
+      border-left: 1px solid $border-color;
       color: #9B9B9B;
     }
   }
@@ -47,7 +42,7 @@ ul.child{
   margin-left: -5px;
   font-size: 16px;
   & a {
-    color: #D4D4D4;
+    color: $border-color;
     text-decoration: none;
   }
   li.child-hidden {
@@ -59,10 +54,10 @@ ul.child{
     padding: 10px;
     text-decoration: none;
     background-color: black;
-    border: 1px solid #D4D4D4;
+    border: 1px solid $border-color;
     &:hover{
       opacity: 0.8;
-      border: 2px solid #D4D4D4;
+      border: 2px solid $border-color;
     }
   }
 }
@@ -72,39 +67,36 @@ ul.child{
   display: none;
   position: absolute;
   left: 0;
-  width: 99.2%;
+  width: calc(100% - 20px);
   font-size: 16px;
   .child-hidden {
     opacity: 0;
-    height: 20px;
+    height: 12px;
   }
   .child-search{
-    border: 1px solid #D4D4D4;
+    @include border-box;
     background-color:black;
-    padding: 10px 10px;
+    padding: 20px;
     display: block;
     text-decoration: none;
-    color: #D4D4D4;
-    border-radius: 20px;
+    color: $border-color;
     text-align: center;
     position: relative;
     input {
-      width: 90%;
+      width: 100%;
     }
     &__taglist {
       color: black;
       position: absolute;
       bottom: 20px;
       &--tag {
+        @include tag-box;
         display: inline-block;
         font-size: 100%;
-        background-color: black;
-        border-radius: 20%;
-        padding: 6px;
         text-decoration: none;
         margin: 20px 3px 0;
         .tag {
-          border-radius: 20%;
+          border-radius: 20px;
           border: solid 2px white;
           padding:6px;
           color: white;
