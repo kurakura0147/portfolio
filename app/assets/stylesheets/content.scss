@@ -1,6 +1,8 @@
+@import "./modules/color";
+
 .main-about {
   padding: 10px 300px;
-  background-color: #f5f5f5;
+  background-color: $base-color;
   text-align: center;
   display: flex;
   img{
@@ -12,7 +14,7 @@
   padding: 10px 180px 20px;
   display: flex;
   justify-content: space-between;
-  background-color: #f5f5f5;
+  background-color: $base-color;
   &__left {
     width: 740px;
     background-color: white;
@@ -20,7 +22,7 @@
     &--article {
       margin: 20px;
       display: flex;
-      border: 1px solid #D4D4D4;
+      border: 1px solid $border-color;
       text-decoration: none;
     }
     &--user {
@@ -43,15 +45,13 @@
   }
   &__page {
     padding: 0 180px 20px;
-    background-color: #f5f5f5;
+    background-color: $base-color;
     .pagination {
       font-weight: bold;
       & a {
-        color: white;
-        text-decoration: none;
-        background-color: black;
+        @include tag-box;
+        @include link_white;
         padding: 8px;
-        border-radius: 20%;
         margin-left: 8px;
         &:hover {
           color: yellow;
@@ -60,84 +60,3 @@
     }
   }
 }
-
-//メインの記事
-.article {
-  &__list {
-    padding: 20px;
-    width: 100%;
-    position: relative;
-  }
-  &__image {
-    min-width: 260px;
-    height: 180px;
-    border-right: 1px solid #D4D4D4;
-  }
-  &__title {
-    color:black;
-    font-size: 22px;
-    display: flex;
-  }
-  &__text {
-    color: black;
-    margin-top: 10px;
-    width: 400px;
-    overflow: hidden;
-    word-wrap: break-word;
-    height: 60px;
-
-  }
-  &__taglist {
-    color: black;
-    position: absolute;
-    bottom: 20px;
-    &--tag {
-      display: inline-block;
-      font-size: 100%;
-      background-color: black;
-      border-radius: 20%;
-      padding: 4px;
-      .tag {
-      border-radius: 20%;
-      padding: 2px 4px;
-      color: white;
-      font-size: 12px;
-      }
-    }
-  }
-  &__iine {
-    position: absolute;
-    right: 20px;
-    a {
-      text-decoration: none;
-    }
-  }
-  &__time {
-    color: gray;
-    position: absolute;
-    bottom: 10px;
-    right:10px;
-  }
-}
-
-//サイドの記事
-.favorite__list {
-  width: 270px;
-  border: 1px solid #D4D4D4;
-  margin: 20px 0 ;
-  &--image {
-    border-bottom: 1px solid #D4D4D4;
-    text-align: center;
-    img {
-      height:160px;
-      margin: 0 auto;
-      max-width: 270px;
-    }
-  }
-  &--name {
-    min-height: 40px;
-    font-size: 20px;
-    padding: 10px;
-  }
-}
-

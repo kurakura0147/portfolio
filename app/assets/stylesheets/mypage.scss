@@ -1,3 +1,5 @@
+@import "./modules/color";
+
 .mypage-content {
   height: calc(100vh - 170px);
   width: 100%;
@@ -7,40 +9,42 @@
     margin: 40px auto;
     display: flex;
     &--age {
-      border-bottom: 1px solid #D4D4D4;
+      @include border-box;
     }
     &--career {
-      border-bottom: 1px solid #D4D4D4;
+      @include border-box;
     }
     &--language {
-      border-bottom: 1px solid #D4D4D4;
+      @include border-box;
     }
     &--apli {
-      border-bottom: 1px solid #D4D4D4;
+      @include border-box;
     }
     &--now {
-      border-bottom: 1px solid #D4D4D4;
+      @include border-box;
     }
     &--sns {
-      border-bottom: 1px solid #D4D4D4;
+      @include border-box;
     }
     &--name {
-      border-bottom: 1px solid #D4D4D4;
+      @include border-box;
       text-align: center;
       font-size: 20px;
+    }
+    &--current {
+      @include border-box;
     }
   }
 }
 
 .google-map {
+  @include border-box;
   height: 240px;
-  background-color: pink;
 }
 
 .mypage__right {
+  @include border-box;
   width: 400px;
-  border: 2px solid #D4D4D4;
-  padding: 20px;
   img {
     height: 400px;
     width: 360px;
@@ -49,6 +53,5 @@
 
 .mypage__left {
   width: 500px;
-  border: 2px solid #D4D4D4;
-  padding: 20px;
+
 }

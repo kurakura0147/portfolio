@@ -1,3 +1,5 @@
+@import "./modules/color";
+
 .article__show {
   border:solid 1px black;
   width: 100%;
@@ -10,7 +12,7 @@
   &--image {
     width: 560px;
     height: 240px;
-    border-right: 1px solid #D4D4D4;
+    border-right: 1px solid $border-color;
   }
   &--title {
     color:black;
@@ -31,11 +33,10 @@
     &--tag {
       display: inline-block;
       font-size: 100%;
-      background-color: black;
-      border-radius: 20%;
+      @include tag-box;
       padding: 4px;
       .tag {
-      border-radius: 20%;
+      border-radius: 20px;
       padding: 2px 4px;
       color: white;
       font-size: 12px;
@@ -58,15 +59,13 @@
   &--link {
     padding: 22px 0;
     text-align: center;
-    background-color:#f5f5f5;
+    background-color: $base-color;
   }
 }
 
 #link_button {
-  color: white;
-  background-color: black;
-  text-decoration: none;
-  border-radius: 30%;
+  @include tag-box;
+  @include link_white;
   padding: 20px 10px;
   margin: 0 20px;
   &:hover {
@@ -102,12 +101,11 @@ form {
     width: calc(100% - 120px);
   }
   &_submit {
+    @include tag-box;
     position: absolute;
     right: 20px;
     bottom: 20px;
     color: white;
-    background-color: black;
-    border-radius: 30%;
     padding: 20px;
   }
 }
