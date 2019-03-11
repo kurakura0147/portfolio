@@ -81,6 +81,11 @@
   &__text {
     color: black;
     margin-top: 10px;
+    width: 400px;
+    overflow: hidden;
+    word-wrap: break-word;
+    height: 60px;
+
   }
   &__taglist {
     color: black;
@@ -120,7 +125,6 @@
   width: 270px;
   border: 1px solid #D4D4D4;
   margin: 20px 0 ;
-
   &--image {
     border-bottom: 1px solid #D4D4D4;
     text-align: center;

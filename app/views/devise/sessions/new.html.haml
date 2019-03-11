@@ -1,0 +1,23 @@
+.user_content
+  %h2 Log in
+  .user_content-list
+    = image_tag ("sign after.png"), class: "user_content-image"
+    .user_content-form
+      = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+        .field
+          = f.label :nickname
+          %br/
+          = f.text_field :nickname, autofocus: true
+          .field
+            = f.label :email
+            %br/
+            = f.email_field :email, autofocus: true, autocomplete: "email"
+          .field
+            = f.label :password
+            %br/
+            = f.password_field :password, autocomplete: "current-password"
+        .actions
+          = f.submit "Log in", id: "user_submit"
+          = link_to "back", root_path, id: "user_submit"
+          .actions__devise
+            = render "devise/shared/links"
