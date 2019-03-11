@@ -1,15 +1,28 @@
 = render 'shared/header'
 = render 'shared/about'
 
-= form_for @contents do |f|
-  =f.label :name
-  =f.text_field :name
-  =f.label :text
-  =f.text_field :text
-  =f.label :tag_list
-  =f.text_field :tag_list, parse: true
-  =f.label :image
-  =f.file_field :image
-  =f.submit "OK"
+
+.main-content
+  .article__new
+    = form_for @contents do |f|
+      .article__show--image
+        / =f.label :image
+        =f.file_field :image
+      .article__show--list
+        .article__show--title
+          .i.far.fa-clipboard &nbsp;&nbsp;
+          / =f.label :title
+          =f.text_field :name
+        .article__show--text
+          .i.fas.fa-arrow-right
+          =f.text_area :text
+        .article__show--tag
+          =f.label :tag_list, "tag (コンマ区切りです)"
+          %br
+          =f.text_field :tag_list, parse: true
+
+          =f.submit "EDIT", id: "content_submit"
+
+.article__show--link
 
 = render 'shared/footer'

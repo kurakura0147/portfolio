@@ -1,38 +1,45 @@
 = render 'shared/header'
 = render 'shared/about'
 
-= image_tag @contents.image, class: "article__image"
-.article__list
-  .article__title
-    .i.far.fa-clipboard
-    %br
-    name:
-    = @contents.name
-    %br
-  .article__text
-    text:
-    = @contents.text
-  .article__taglist
-    - @uu = ActsAsTaggableOn::Tagging.where(taggable_id: @contents.id)
-    - @uu.each do |num|
-      - num.tag_id
-      %li.article__taglist--tag
-        .tag
-          = ActsAsTaggableOn::Tag.find(num.tag_id).name
-  %br
-  .i.far.fa-clock
-  = @contents.created_at.strftime("%Y/%m/%d %H:%M")
-  %br
-  = "投稿者 : #{@contents.user.nickname}"
-  %br
-  = link_to "投稿者 : #{@contents.user.nickname}さんの記事一覧を見る", user_path(id: @contents.user_id), name: "params_content"
-- if user_signed_in?
-  - if @contents.user_id == current_user.id
+.main-content
+  .article__show
+    = image_tag @contents.image, class: "article__show--image"
+    .article__show--list
+      .article__show--title
+        .i.far.fa-clipboard
+        = @contents.name
+        %br
+      .article__show--text
+        .i.fas.fa-arrow-right
+        = @contents.text
+      .article__show--taglist
+        - @uu = ActsAsTaggableOn::Tagging.where(taggable_id: @contents.id)
+        - @uu.each do |num|
+          - num.tag_id
+          %li.article__show--taglist--tag
+            .tag
+              = "# #{ActsAsTaggableOn::Tag.find(num.tag_id).name}"
+      .article__time
+        .i.far.fa-clock
+        = @contents.created_at.strftime("%Y/%m/%d %H:%M")
+        %br
+        = "投稿者 : #{@contents.user.nickname}"
 
-    = link_to edit_content_path do
-      編集画面に
 
-    = link_to content_path, method: :delete, data: {confirm: "本当に削除しますか？"} do
-      削除をする
+.article__show--link
+
+  = link_to user_path(id: @contents.user_id), name: "params_content", id: "link_button" do
+    <i class="fas fa-user-check"></i>
+    #{@contents.user.nickname}さんの記事一覧を見る
+
+  - if user_signed_in?
+    - if @contents.user_id == current_user.id
+
+      = link_to edit_content_path, id: "link_button" do
+        .i.fas.fa-edit
+        Edit
+      = link_to content_path, method: :delete, data: {confirm: "本当に削除しますか？"}, id: "link_button" do
+        .i.fas.fa-trash
+        Delete
 
 = render 'shared/footer'
