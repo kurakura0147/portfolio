@@ -1,0 +1,68 @@
+
+.user_content {
+  position: relative;
+  padding: 100px 300px;
+  height: calc(100% - 600px);
+  width: calc(100% - 600px);
+  h2 {
+
+    font-size: 30px;
+    font-weight: bold;
+  }
+  &-list {
+    height: calc(100vh - 400px);
+    display: flex;
+  }
+  &-image {
+    margin-right: 20px;
+    height: 300px;
+    width: 400px;
+  }
+  &-form {
+    background-color: black;
+    color: white;
+    padding: 40px;
+    border-radius: 40px;
+    position: relative;
+    margin: auto;
+    width: 340px;
+    .field {
+      width: 400px;
+      input {
+        width: 300px;
+      }
+    }
+  }
+}
+
+.actions {
+  margin-right:40px;
+  display: flex;
+  height: 60px;
+  position: relative;
+  bottom: -300px;
+  right: 400px;
+  line-height: 60px;
+  &__devise {
+    margin-left:40px;
+    background-color: black;
+    border-radius: 30%;
+    width: 80px;
+    text-align: center;
+    a {
+      text-decoration: none;
+      font-weight: bold;
+      color: white;
+    }
+  }
+}
+
+#user_submit {
+  margin-left:40px;
+  color: white;
+  background-color: black;
+  border-radius: 30%;
+  padding: 10px;
+  text-decoration: none;
+  font-weight: bold;
+}

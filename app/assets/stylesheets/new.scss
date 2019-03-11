@@ -20,6 +20,9 @@
   &--text {
     color: black;
     margin-top: 10px;
+    overflow: scroll;
+    height: 100px;
+    word-wrap: break-word;
   }
   &--taglist {
     color: black;

@@ -25,16 +25,12 @@
         %br
         = "投稿者 : #{@contents.user.nickname}"
 
-
 .article__show--link
-
   = link_to user_path(id: @contents.user_id), name: "params_content", id: "link_button" do
     <i class="fas fa-user-check"></i>
     #{@contents.user.nickname}さんの記事一覧を見る
-
   - if user_signed_in?
     - if @contents.user_id == current_user.id
-
       = link_to edit_content_path, id: "link_button" do
         .i.fas.fa-edit
         Edit

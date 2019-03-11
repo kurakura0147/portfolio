@@ -4,6 +4,7 @@ class UsersController < ApplicationController
 
 #ユーザー情報詳細 users_path
   def index
+    @user= User.find(current_user.id)
   end
 
 #投稿記事一覧 user_path
