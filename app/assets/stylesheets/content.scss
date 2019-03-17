@@ -12,10 +12,15 @@
     background-color: white;
     height: 100%;
     &--article {
-      margin: 20px;
-      display: flex;
-      border: 1px solid $border-color;
       text-decoration: none;
+      .fadein {
+        opacity : 0;
+        margin: 20px;
+        transform: translateYX(100px);
+        transition: all 3s;
+        border: 1px solid $border-color;
+        display: flex;
+      }
     }
     &--user {
       padding:20px 20px 0;
