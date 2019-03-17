@@ -8,6 +8,10 @@
   justify-content: space-between;
   align-items:center;
   filter: drop-shadow(1px 1px 1px rgba(0,0,0,0.6));
+  position: relative;
+  z-index: 40;
+  width: calc(100vw - 360px);
+  position: fixed;
   &__logo {
     font-size: 35px;
     font-weight: bold;
