@@ -5,7 +5,7 @@ class ContentsController < ApplicationController
   before_action :set_tags
 
   def index
-    @contents = Content.all.order("id DESC").page(params[:page]).per(6)
+    @contents = Content.all.includes(:user).order("id DESC").page(params[:page]).per(6)
     @ranking_contents = Content.order("likes_count DESC")
   end
 
