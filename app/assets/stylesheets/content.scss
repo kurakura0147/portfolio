@@ -1,20 +1,12 @@
 @import "./modules/color";
 
-.main-about {
-  padding: 10px 300px;
-  background-color: $base-color;
-  text-align: center;
-  display: flex;
-  img{
-    height: 300px;
-    width: 600px;
-  }
-}
 .main-content {
-  padding: 10px 180px 20px;
+  padding: 80px 180px 20px;
   display: flex;
   justify-content: space-between;
   background-color: $base-color;
+  position: relative;
+  z-index: 20;
   &__left {
     width: 740px;
     background-color: white;
