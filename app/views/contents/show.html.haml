@@ -37,21 +37,22 @@
         .i.fas.fa-trash
         Delete
 
+.comment__content
   - if user_signed_in?
     = form_tag content_comments_path(@contents) do
-      #link_button
+      = text_field_tag :com, "", id: "comment_button", placeholder: "コメントを入力してください"
+      = hidden_field_tag :user_id, current_user.id
+      .comment__content--icon
+        .i.far.fa-comment.fa-4x
+      = button_tag
 
-        = text_field_tag :com
-        = hidden_field_tag :user_id, current_user.id
-        = submit_tag
-
-- @comments.each do |comment|
-  .tag
-    .i.fas.fa-comment-alt
-    =comment.com
-    .i.fas.fa-user-circle
-    ="#{comment.user.nickname}さん"
-
-
+  - @comments.each do |comment|
+    .comment__content--list
+      .comment__content--list-text
+        .i.fas.fa-comment-alt
+          =comment.com
+      .comment__content--list-name
+        .i.fas.fa-user-circle
+          ="#{comment.user.nickname}さん"
 
 = render 'shared/footer'

@@ -19,7 +19,7 @@ class ContentsController < ApplicationController
   end
 
   def show
-    @comments = @contents.comments.includes(:user)
+    @comments = @contents.comments.includes(:user).order("id DESC")
   end
 
   def edit
