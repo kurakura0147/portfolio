@@ -19,6 +19,7 @@ class ContentsController < ApplicationController
   end
 
   def show
+    @comments = @contents.comments.includes(:user)
   end
 
   def edit

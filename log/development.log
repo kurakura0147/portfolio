@@ -46330,3 +46330,45 @@ Processing by ContentsController#index as HTML
 Completed 200 OK in 152ms (Views: 139.4ms | ActiveRecord: 7.7ms)
 
 
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT DATABASE() as db[0m
+  [1m[35m (43.5ms)[0m  [1m[34mSELECT GET_LOCK('4373051316486144390', 0);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to CreateComments (20190317044536)
+  [1m[35m (132.5ms)[0m  [1m[35mCREATE TABLE `comments` (`id` int AUTO_INCREMENT PRIMARY KEY, `com` varchar(255), `user_id` int, `contnet_id` int, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_comments_on_user_id`  (`user_id`),  INDEX `index_comments_on_contnet_id`  (`contnet_id`), CONSTRAINT `fk_rails_03de2dc08c`
+FOREIGN KEY (`user_id`)
+  REFERENCES `users` (`id`)
+, CONSTRAINT `fk_rails_3481705d4b`
+FOREIGN KEY (`contnet_id`)
+  REFERENCES `contnets` (`id`)
+) ENGINE=InnoDB[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT RELEASE_LOCK('4373051316486144390')[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT DATABASE() as db[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT GET_LOCK('4373051316486144390', 0);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to CreateComments (20190317044536)
+  [1m[35m (50.6ms)[0m  [1m[35mCREATE TABLE `comments` (`id` int AUTO_INCREMENT PRIMARY KEY, `com` varchar(255), `user_id` int, `content_id` int, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_comments_on_user_id`  (`user_id`),  INDEX `index_comments_on_content_id`  (`content_id`), CONSTRAINT `fk_rails_03de2dc08c`
+FOREIGN KEY (`user_id`)
+  REFERENCES `users` (`id`)
+, CONSTRAINT `fk_rails_8895933a2a`
+FOREIGN KEY (`content_id`)
+  REFERENCES `contents` (`id`)
+) ENGINE=InnoDB[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (2.5ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20190317044536')[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.6ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT RELEASE_LOCK('4373051316486144390')[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (1.3ms)[0m  [1m[35mSHOW CREATE TABLE `comments`[0m
+  [1m[35m (1.0ms)[0m  [1m[35mSHOW TABLE STATUS LIKE 'comments'[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSHOW CREATE TABLE `contents`[0m
+  [1m[35m (0.8ms)[0m  [1m[35mSHOW TABLE STATUS LIKE 'contents'[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSHOW CREATE TABLE `likes`[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSHOW CREATE TABLE `taggings`[0m
+  [1m[35m (0.7ms)[0m  [1m[35mSHOW TABLE STATUS LIKE 'taggings'[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSHOW CREATE TABLE `tags`[0m
+  [1m[35m (0.8ms)[0m  [1m[35mSHOW TABLE STATUS LIKE 'tags'[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSHOW CREATE TABLE `users`[0m
+  [1m[35m (0.7ms)[0m  [1m[35mSHOW TABLE STATUS LIKE 'users'[0m
