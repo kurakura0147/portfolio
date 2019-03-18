@@ -37,4 +37,21 @@
         .i.fas.fa-trash
         Delete
 
+  - if user_signed_in?
+    = form_tag content_comments_path(@contents) do
+      #link_button
+
+        = text_field_tag :com
+        = hidden_field_tag :user_id, current_user.id
+        = submit_tag
+
+- @comments.each do |comment|
+  .tag
+    .i.fas.fa-comment-alt
+    =comment.com
+    .i.fas.fa-user-circle
+    ="#{comment.user.nickname}さん"
+
+
+
 = render 'shared/footer'
