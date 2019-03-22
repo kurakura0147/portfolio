@@ -40,14 +40,17 @@ class ContentsController < ApplicationController
 
   def search
     if params[:params_name]
-      @contents = Content.where('name LIKE(?)', "%#{params[:search]}%").page(params[:page]).per(6)
+      @contents = Content.where('name LIKE(?)', "%#{params[:search]}%")
+      @count = @contents.count
+      @contents = @contents.page(params[:page]).per(6)
     else
       @search_tag = ActsAsTaggableOn::Tag.find_by(name: params[:search]).id
       @search_content = ActsAsTaggableOn::Tagging.where(tag_id: @search_tag).pluck(:taggable_id)
-      @contents = Content.where(id: @search_content).page(params[:page]).per(6)
+      @contents = Content.where(id: @search_content)
+      @count = @contents.count
+      @contents = @contents.page(params[:page]).per(6)
     end
 
-      @count = @contents.count
 
   end
 
