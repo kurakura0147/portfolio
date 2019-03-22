@@ -19,6 +19,7 @@
 - else
   / ログインしてない時
   .vertical_like
+  = link_to new_user_registration_path, class: "logout_button" do
     %i.far.fa-heart
     %span.red-text
       = content.likes_count
