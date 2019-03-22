@@ -3,7 +3,8 @@
   = i
   - i += 1
   .favorite__list
-    .favorite__list--image
-      = image_tag content.image
-    .favorite__list--name
-      = content.name
+    = link_to content_path(content) do
+      .favorite__list--image
+        = image_tag content.image
+      .favorite__list--name
+        = content.name
